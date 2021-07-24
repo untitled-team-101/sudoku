@@ -1,2 +1,2 @@
-# Sudoko
-Sudoko Game in React
+# Sudoku
+Sudoku Game in React
