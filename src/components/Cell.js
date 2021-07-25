@@ -27,6 +27,29 @@ const bindToKeyboardInput = () => {
 
 bindToKeyboardInput();
 
+function createClass(index, prevClass) {
+  if (index % 9 === 2 || index % 9 === 5) {
+    prevClass += " border-right";
+  }
+  if (index % 9 === 3 || index % 9 === 6) {
+    prevClass += " border-left";
+  }
+  if (index >= 18 && index <= 26) {
+    prevClass += " border-bottom";
+  }
+  if (index >= 45 && index <= 53) {
+    prevClass += " border-bottom";
+  }
+  if (index >= 27 && index <= 35) {
+    prevClass += " border-top";
+  }
+  if (index >= 54 && index <= 62) {
+    prevClass += " border-top";
+  }
+  console.log(index, prevClass);
+  return prevClass;
+}
+
 function Cell({ number, index, editable, status }) {
   const onClickCell = (event) => {
     event.target.index = index;
@@ -36,13 +59,14 @@ function Cell({ number, index, editable, status }) {
 
   return (
     <div
-      className={
+      className={createClass(
+        index,
         !editable || number === 0
           ? "cell"
           : status
           ? "cell correct"
           : "cell incorrect"
-      }
+      )}
       onClick={onClickCell}
     >
       {number === 0 ? "" : number}

@@ -14,8 +14,12 @@ const Game = ({ sudokuArrays, difficulty }) => {
   });
 
   return (
-    <div className={"gamePage"}>
-      <Board sudokuArray={sudokuArray} editable={editable} solutionArray={solutionArray} />
+    <div className={"gamePage xeasy"}>
+      <Board
+        sudokuArray={sudokuArray}
+        editable={editable}
+        solutionArray={solutionArray}
+      />
     </div>
   );
 };
