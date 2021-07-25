@@ -27,14 +27,24 @@ const bindToKeyboardInput = () => {
 
 bindToKeyboardInput();
 
-function Cell({ number, index, editable }) {
+function Cell({ number, index, editable, status }) {
   const onClickCell = (event) => {
     event.target.index = index;
     if (editable) setSelectedCell(event.target);
     else setSelectedCell(null);
   };
+
   return (
-    <div className="cell" onClick={onClickCell}>
+    <div
+      className={
+        !editable || number === 0
+          ? "cell"
+          : status
+          ? "cell right"
+          : "cell wrong"
+      }
+      onClick={onClickCell}
+    >
       {number === 0 ? "" : number}
     </div>
   );

@@ -5,8 +5,9 @@ import { useState } from "react";
 
 import { setBoardStateFunction } from "./context/BoardState";
 
-const Board = ({ sudokuArray, editable }) => {
+const Board = ({ sudokuArray, editable, solutionArray }) => {
   const [board, setBoard] = useState(sudokuArray);
+
   setBoardStateFunction(setBoard);
   let cells = [];
   for (let i = 0; i < board.length; i++) {
@@ -17,6 +18,7 @@ const Board = ({ sudokuArray, editable }) => {
         setBoard={setBoard}
         editable={editable[i]}
         key={i}
+        status={solutionArray[i] === board[i]}
       />
     );
   }
