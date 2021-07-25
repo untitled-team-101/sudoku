@@ -1,0 +1,53 @@
+@font-face {
+  font-family: Roboto-custom;
+  src:url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+}
+
+.home{
+
+  background: rgb(255,255,255);
+  background: radial-gradient(circle, rgba(255,255,255,1) 30%, rgba(229,233,240,1) 100%);
+  font-family: Roboto-custom,sans-serif, monospace;
+
+  .homeContent {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    grid-template-rows: auto auto;
+    align-items: center;
+    height: 96vh;
+    .homeTitle {
+      font-size: 8vmin;
+      display: flex;
+      flex-flow: column;
+      align-items: center;
+    }
+    .homePlayBtn{
+      user-select: auto;
+      border-radius: 1vmin;
+      cursor: pointer;
+      font-size: 4vmin;
+      background-color: lightblue;
+      padding: 1.5vmin;
+      box-shadow: lightblue 0 0 0.4vmin 0.2vmin;
+    }
+    .homePlayBtn:hover{
+      user-select: auto;
+      border-radius: 1vmin;
+      cursor: pointer;
+      font-size: 4vmin;
+      background-color: lightblue;
+      padding: 1.5vmin;
+      transform: scale(1.15);
+    }
+  }
+
+  .homeFooter{
+    font-size: 2vmin;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: lightblue;
+    height: 4vmin;
+  }
+}
