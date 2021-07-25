@@ -8,10 +8,14 @@ const Game = ({ sudokuArrays, difficulty }) => {
   const solutionString = sudokuArrays[difficulty][1][index];
   const sudokuArray = sudokuString.split("").map((x) => parseInt(x));
   const solutionArray = solutionString.split("").map((x) => parseInt(x));
+  const editable = sudokuArray.map((item) => {
+    if (item === 0) return true;
+    else return false;
+  });
 
   return (
     <div className={"gamePage"}>
-      <Board sudokuArray={sudokuArray} />
+      <Board sudokuArray={sudokuArray} editable={editable} />
     </div>
   );
 };
