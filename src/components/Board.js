@@ -1,10 +1,17 @@
-import './styles/Board.scss'
+import './styles/Board.scss';
 
 const Board = () => {
 
     let arr = []
     for (let i = 0; i < 81; i++) {
         arr.push(<div className={'cell'}>1</div>)
+    }
+    let createBoard = (arr) => {
+        return [...Array(81)].map((value, index) => {
+            return (
+                <div className={'cell'} key={index}>{index}</div>
+            )
+        })
     }
 
     return (
@@ -13,12 +20,7 @@ const Board = () => {
                 <div className={'board'}>
                     <div className="page top">
                         {
-                            [...Array(81)].map((value, index) => {
-                                return (
-                                    <div className={'cell'} key={index}>{index}</div>
-
-                                )
-                            })
+                            createBoard("")
                         }
                     </div>
                     <div className="page bottom">

@@ -1,5 +1,5 @@
 * {
-  transition: 1s ease;
+  transition: 2s ease;
 }
 
 .boardContainer {
@@ -23,28 +23,70 @@
       position: absolute;
       padding: 2vmin;
       display: grid;
+      background: #ECEFF4;
+      grid-gap: -0.1vmin;
       grid-template: repeat(9,1fr) / repeat(9,1fr);
+      .cell {
+        background: #ECEFF4;
+        display: grid;
+        place-content: center;
+        border: 0.2vmin solid black;
+      }
+      .border-bottom{
+        border-bottom: 0.4vmin solid;
+      }
+      .border-right{
+        border-right: 0.4vmin solid;
+      }
+    }
+    .solved{
+      background-color: #A3BE8C;
+      .cell{
+        background-color: #A3BE8C;
+
+      }
+    }
+    .top.solved .cell{
+      border: 0.2vmin solid #d0582e;
+    }
+    .bottom.solved .cell{
+      border: 0.2vmin solid #516624;
+    }
+    .left.solved .cell{
+      border: 0.2vmin solid #d0582e;
+    }
+    .right.solved .cell{
+      border: 0.2vmin solid #d0582e;
     }
 
     .top {
       transform: translateY(-25vmin) rotateX(90deg);
-      background-color: red;
+      .cell {
+        //
+        border: .2vmin solid #D08770;
+      }
     }
 
     .bottom {
       transform: translateY(25vmin) rotateX(-90deg);
-      background-color: yellow;
+      .cell {
+        border: 0.2vmin solid #A3BE8C;
+      }
     }
 
 
     .left {
       transform: translateX(-25vmin) rotateY(-90deg);
-      background-color: orange;
+      .cell {
+        border: 0.2vmin solid #D08770;
+      }
     }
 
     .right {
       transform: translateX(25vmin) rotateY(90deg);
-      background-color: blue;
+      .cell {
+        border: 0.2vmin solid #EBCB8B;
+      }
     }
 
     .front {
@@ -60,28 +102,29 @@
 
     .back {
       transform: translateZ(-25vmin) rotateX(180deg);
-      background-color: deeppink;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
     //@keyframes frame1 {
     //  0% {
-    //    transform: rotateX(0deg) rotateY(0deg) rotateY(0deg);
+    //    transform: rotateX(-180deg) rotateY(0deg) rotateZ(0deg);
     //  }
-    //  100% {
-    //    transform: rotateX(360deg) rotateY(360deg) rotateZ(0deg);
+    //  20% {
+    //    transform: rotateX(-90deg) rotateY(0deg) rotateZ(0deg);
     //  }
+    // 100% {
+    //   transform: rotateX(-90deg) rotateY(0deg) rotateZ(360deg);
+    // }
+    //  //100% {
+    //  //}
     //}
 
 
   }
 
 
-  .cell {
-    background: red;
-    display: grid;
-    place-content: center;
-    border: 0.2vmin solid black;
-  }
 
 
 }
