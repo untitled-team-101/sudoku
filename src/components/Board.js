@@ -3,11 +3,15 @@ import './styles/Board.scss'
 import Cell from './Cell'
 import {useState} from "react";
 
+import {setBoardStateFunction} from "./context/BoardState";
+
 const Board = () => {
-    const [board, setBoard] = useState([])
+    const [board, setBoard] = useState([1,2,3,4,5])
+    setBoardStateFunction(setBoard)
     let cells = []
-    for(let i=0;i<81;i++){
-        cells.push( <Cell number={i%9} setBoard={setBoard}/> )
+    for(let i=0;i<board.length;i++){
+      console.log(board)
+        cells.push( <Cell number={board[i]} index={i} setBoard={setBoard} key={i}/> )
     }
     return(
         <div className={'boardContainer'}>
