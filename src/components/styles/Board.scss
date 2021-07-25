@@ -1,13 +1,14 @@
 * {
   transition: 1s ease;
 }
+
 .boardContainer {
   perspective: 100vmin;
+
   .board {
     height: 50vmin;
     width: 50vmin;
     margin: auto;
-    //border: solid black 2vmin;
     transform-style: preserve-3d;
     animation: frame1 4s linear infinite;
     transform: rotateX(0deg) rotateZ(0deg);
@@ -15,13 +16,14 @@
 
 
     .page {
-      border: solid black 2vmin;
+      //display: none;
       width: 50vmin;
       height: 50vmin;
+      transform-style: preserve-3d;
       position: absolute;
+      padding: 2vmin;
       display: grid;
       grid-template: repeat(9,1fr) / repeat(9,1fr);
-      transform-style: preserve-3d;
     }
 
     .top {
@@ -46,27 +48,33 @@
     }
 
     .front {
-      transform: translateZ(25vmin);
-      background: green
+      transform: translateZ(25.3vmin);
+      width: 50.2vmin;
+      height: 50.2vmin;
+      background: #ffffff;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
     }
 
     .back {
       transform: translateZ(-25vmin) rotateX(180deg);
-      background-color: black;
+      background-color: deeppink;
     }
-
 
     //@keyframes frame1 {
     //  0% {
     //    transform: rotateX(0deg) rotateY(0deg) rotateY(0deg);
     //  }
     //  100% {
-    //    transform: rotateX(90deg) rotateY(0deg) rotateZ(0deg);
+    //    transform: rotateX(360deg) rotateY(360deg) rotateZ(0deg);
     //  }
     //}
 
 
   }
+
 
   .cell {
     background: red;
@@ -77,34 +85,70 @@
 
 
 }
+
 .xeasy {
   perspective: 50vmin;
-    .board{
-      transform: rotateX(90deg) rotateY(0deg) rotateZ(0deg);
+
+  .board {
+    transform: rotateX(90deg) rotateY(0deg) rotateZ(0deg);
+    .front{
+      transform: translateZ(25vmin);
+      width: 50vmin;
+      height: 50vmin;
     }
+  }
 
 }
+
 .easy {
   perspective: 50vmin;
-  .board{
+
+  .board {
     transform: rotateX(0deg) rotateY(-90deg) rotateZ(0deg);
+    .front{
+      transform: translateZ(25vmin);
+      width: 50vmin;
+      height: 50vmin;
+    }
   }
 }
+
 .medium {
   perspective: 50vmin;
-  .board{
+
+  .board {
     transform: rotateX(0deg) rotateY(90deg) rotateZ(0deg);
+
+    .front{
+      transform: translateZ(25vmin);
+      width: 50vmin;
+      height: 50vmin;
+    }
   }
 }
+
 .hard {
   perspective: 50vmin;
-  .board{
+
+  .board {
     transform: rotateX(-90deg) rotateY(0deg) rotateZ(0deg);
+    .front{
+      transform: translateZ(25vmin);
+      width: 50vmin;
+      height: 50vmin;
+    }
   }
 }
+
 .done {
-  perspective: 50vmin;
-  .board{
+  perspective: 100vmin;
+
+  .board {
     transform: rotateX(-180deg) rotateY(0deg) rotateZ(0deg);
+    .front{
+      transform: translateZ(25vmin);
+      width: 50vmin;
+      height: 50vmin;
+    }
   }
 }

@@ -8,36 +8,59 @@ const Board = () => {
     }
 
     return (
-        <div className={'boardContainer'}>
-            <div className={'board'}>
-                <div className="page top">
-                    Hard
-                </div>
-                <div className="page bottom">
-                    Extra Easy
-                </div>
-                <div className="page left">
-                    Medium
-                </div>
-                <div className="page right">
-                    <div className={'cell'}>1</div>
-                    <div className={'cell'}>2</div>
-                    <div className={'cell'}>3</div>
-                    <div className={'cell'}>4</div>
-                    <div className={'cell'}>5</div>
-                    <div className={'cell'}>6</div>
-                    <div className={'cell'}>7</div>
-                    <div className={'cell'}>8</div>
-                    <div className={'cell'}>9</div>
-                </div>
-                <div className="page front">
-                    Welcome Page!
-                </div>
-                <div className="page back">
-                    Final Page
+        <>
+            <div className={'boardContainer'}>
+                <div className={'board'}>
+                    <div className="page top">
+                        {
+                            [...Array(81)].map((value, index) => {
+                                return (
+                                    <div className={'cell'} key={index}>{index}</div>
+
+                                )
+                            })
+                        }
+                    </div>
+                    <div className="page bottom">
+                        {
+                            [...Array(81)].map((value, index) => {
+                                return (
+                                    <div className={'cell'} key={index}>{index}</div>
+
+                                )
+                            })
+                        }
+                    </div>
+                    <div className="page left">
+                        {
+                            [...Array(81)].map((value, index) => {
+                                return (
+                                    <div className={'cell'} key={index}>{index}</div>
+
+                                )
+                            })
+                        }
+                    </div>
+                    <div className="page right">
+                        {
+                            [...Array(81)].map((value, index) => {
+                                return (
+                                    <div className={'cell'} key={index}>{index}</div>
+
+                                )
+                            })
+                        }
+                    </div>
+                    <div className="page front">
+                        Welcome Page!
+                    </div>
+                    <div className="page back">
+                        Final Page
+                    </div>
                 </div>
             </div>
-        </div>
+
+        </>
     )
 }
 
