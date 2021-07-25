@@ -4,15 +4,18 @@ import Cell from "./Cell";
 import { useState } from "react";
 
 import { setBoardStateFunction } from "./context/BoardState";
+import { setCellSelectionFunction } from "./context/SelectedCell";
 
 const Board = ({ sudokuArray, editable, solutionArray }) => {
   const [board, setBoard] = useState(sudokuArray);
-
+  const [selection, setSelection] = useState([-1, -1])
   setBoardStateFunction(setBoard);
+  setCellSelectionFunction(setSelection);
   let cells = [];
   for (let i = 0; i < board.length; i++) {
     cells.push(
       <Cell
+        selection={selection}
         number={board[i]}
         index={i}
         setBoard={setBoard}
