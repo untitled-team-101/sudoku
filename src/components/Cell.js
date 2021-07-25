@@ -40,8 +40,8 @@ function Cell({ number, index, editable, status }) {
         !editable || number === 0
           ? "cell"
           : status
-          ? "cell right"
-          : "cell wrong"
+          ? "cell correct"
+          : "cell incorrect"
       }
       onClick={onClickCell}
     >
