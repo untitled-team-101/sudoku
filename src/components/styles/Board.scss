@@ -1,16 +1,154 @@
-.boardContainer{
-    background-color: lightgrey;
-    .board{
-        display: grid;
-        grid-template: repeat(9,auto) / repeat(9,auto);
-        height: 50vmin;
-        width: 50vmin;
-        border: solid black 2vmin;
-        .cell{
-            background: slategray;
-            display: grid;
-            place-content: center;
-            border: 0.2vmin solid black;
-        }
+.boardContainer {
+  .board {
+    height: 50vmin;
+    width: 50vmin;
+    margin: auto;
+    display: grid;
+    //border: solid black 2vmin;
+    transform-style: preserve-3d;
+    grid-template: repeat(9,auto) / repeat(9,auto);
+    animation: frame1 4s linear infinite;
+    transform: rotateX(0deg) rotateZ(0deg);
+    position: relative;
+
+    .page {
+      border: solid black 2vmin;
+      width: 50vmin;
+      height: 50vmin;
+      position: absolute;
+      transform-style: preserve-3d;
     }
+
+    .top {
+      transform: translateY(-25vmin) rotateX(90deg);
+      background-color: red;
+    }
+
+    .bottom {
+      transform: translateY(25vmin) rotateX(-90deg);
+      background-color: yellow;
+    }
+
+    .left {
+      transform: translateX(-25vmin) rotateY(-90deg);
+      background-color: orange;
+    }
+
+    .right {
+      transform: translateX(25vmin) rotateY(90deg);
+      background-color: blue;
+    }
+
+    .front {
+      transform: translateZ(25vmin);
+      background: green
+    }
+
+    .back {
+      transform: translateZ(-25vmin) rotateX(180deg);
+      background-color: black;
+    }
+
+    .page div:nth-child(1) {
+      animation: frame2 7s ease infinite;
+    }
+
+    .page div:nth-child(2) {
+      animation: frame2 7s ease 0.15s infinite;
+    }
+
+    .page div:nth-child(3) {
+      animation: frame2 7s ease 0.3s infinite;
+    }
+
+    .page div:nth-child(4) {
+      animation: frame2 7s ease 0.45s infinite;
+    }
+
+    .page div:nth-child(5) {
+      animation: frame2 7s ease 0.6s infinite;
+    }
+
+    .page div:nth-child(6) {
+      animation: frame2 7s ease 0.75s infinite;
+    }
+
+    .page div:nth-child(7) {
+      animation: frame2 7s ease 0.9s infinite;
+    }
+
+    .page div:nth-child(8) {
+      animation: frame2 7s ease 1.05s infinite;
+    }
+
+    .page div:nth-child(9) {
+      animation: frame2 7s ease 1.2s infinite;
+    }
+
+    .page div:nth-child(10) {
+      animation: frame2 7s ease 0.3s infinite;
+    }
+
+    .page div:nth-child(11) {
+      animation: frame2 7s ease 0.45s infinite;
+    }
+
+    .page div:nth-child(12) {
+      animation: frame2 7s ease 0.6s infinite;
+    }
+
+    .page div:nth-child(13) {
+      animation: frame2 7s ease 0.75s infinite;
+    }
+
+    .page div:nth-child(14) {
+      animation: frame2 7s ease 0.9s infinite;
+    }
+
+    .page div:nth-child(15) {
+      animation: frame2 7s ease 1.05s infinite;
+    }
+
+    .page div:nth-child(16) {
+      animation: frame2 7s ease 1.2s infinite;
+    }
+
+    @keyframes frame1 {
+      0% {
+        transform: rotateX(0deg) rotateY(0deg) rotateY(0deg);
+      }
+      100% {
+        transform: rotateX(360deg) rotateY(360deg) rotateZ(0deg);
+      }
+    }
+
+    @keyframes frame2 {
+      0% {
+        transform: translateZ(0vmin) scale(1) rotateZ(0deg);
+      }
+      35% {
+        transform: translateZ(0vmin) scale(1) rotateZ(0deg);
+      }
+      55% {
+        transform: translateZ(50vmin) scale(0.3) rotateZ(720deg);
+      }
+      85% {
+        transform: translateZ(50vmin) scale(0.3) rotateZ(720deg);
+      }
+      100% {
+        transform: translateZ(0vmin) scale(1) rotateZ(0deg);
+      }
+    }
+
+  }
+
+  .cell {
+    background: red;
+    display: grid;
+    place-content: center;
+    border: 0.2vmin solid black;
+  }
+
+
 }
+
