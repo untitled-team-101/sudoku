@@ -1,17 +1,18 @@
 import './styles/Board.scss'
+
+import Cell from './Cell'
+import {useState} from "react";
+
 const Board = () => {
-
-    let arr = []
+    const [board, setBoard] = useState([])
+    let cells = []
     for(let i=0;i<81;i++){
-        arr.push(<div className={'cell'}>1</div>)
+        cells.push( <Cell number={i%9} setBoard={setBoard}/> )
     }
-
     return(
         <div className={'boardContainer'}>
             <div className={'board'}>
-                {
-                    arr
-                }
+                {cells}
             </div>
         </div>
     )

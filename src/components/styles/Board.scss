@@ -3,8 +3,8 @@
     .board{
         display: grid;
         grid-template: repeat(9,auto) / repeat(9,auto);
-        height: 50vmin;
-        width: 50vmin;
+        height: 90vmin;
+        width: 90vmin;
         border: solid black 2vmin;
         .cell{
             background: slategray;
