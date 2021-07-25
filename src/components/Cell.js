@@ -46,7 +46,6 @@ function createClass(index, prevClass) {
   if (index >= 54 && index <= 62) {
     prevClass += " border-top";
   }
-  console.log(index, prevClass);
   return prevClass;
 }
 

@@ -3,7 +3,9 @@ import Game from "./components/Game";
 import Home from "./components/Home";
 import { sudokuArrays } from "./variables/sudokuArrays";
 
-import "./styles/App.scss";
+import './styles/App.scss'
+import Step1 from "./components/tutorial/Step1";
+import Step2 from "./components/tutorial/Step2";
 
 function App() {
   return (
@@ -13,7 +15,14 @@ function App() {
           <Route exact path={"/"}>
             <Home />
           </Route>
-          <Route exact path={"/game"}>
+
+          <Route exact path={'/step1'}>
+            <Step1/>
+          </Route>
+          <Route exact path={'/step2'}>
+            <Step2/>
+          </Route>
+          <Route exact path={'/game'}>
             <Game sudokuArrays={sudokuArrays} difficulty={1} />
           </Route>
           <Route path={"/"}>

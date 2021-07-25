@@ -1,0 +1,92 @@
+@font-face {
+  font-family: Roboto-custom;
+  src:url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+}
+
+.step2{
+  background: rgb(255,255,255);
+  background: radial-gradient(circle, rgba(255,255,255,1) 30%, rgba(229,233,240,1) 100%);
+  font-family: Roboto-custom,sans-serif, monospace;
+  height: 100%;
+  .step2Title{
+    display: flex;
+    font-size: 2vmin;
+    justify-content: center;
+    background-color: lightblue;
+    padding: 1.5vmin;
+  }
+
+  .step2Containers{
+    display: flex;
+    font-size: 2.5vmin;
+    flex-flow: column;
+    .step2Container1{
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 2vmin;
+      border-bottom: 0.2vmin black solid;
+      .step2Image1{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40%;
+        .image{
+          height: 38vmin;
+        }
+      }
+      .step2Para1{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        .para{
+          width: 50vw;
+        }
+      }
+    }
+    .step2Container2{
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 2vmin;
+      .step2Image2{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40%;
+        .image{
+          width: 38vmin;
+        }
+      }
+      .step2Para2{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        .para{
+          width: 50vw;
+        }
+      }
+    }
+  }
+  .step2Btns{
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    justify-content: flex-end;
+    .step2PlayBtn{
+      border-radius: 1vmin;
+      cursor: pointer;
+      font-size: 3vmin;
+      background-color: lightblue;
+      padding: 1.5vmin;
+      box-shadow: lightblue 0 0 0.4vmin 0.2vmin;
+      margin: 0 1vmin 0 1vmin;
+
+    }
+  }
+
+}
