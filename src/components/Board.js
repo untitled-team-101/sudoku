@@ -1,69 +1,41 @@
-import './styles/Board.scss';
+import "./styles/Board.scss";
 
-const Board = () => {
+import Cell from "./Cell";
+import { useState } from "react";
 
-    let arr = []
-    for (let i = 0; i < 81; i++) {
-        arr.push(<div className={'cell'}>1</div>)
-    }
-    let createBoard = (arr) => {
-        return [...Array(81)].map((value, index) => {
-            return (
-                <div className={'cell'} key={index}>{index}</div>
-            )
-        })
-    }
+import { setBoardStateFunction } from "./context/BoardState";
 
-    return (
-        <>
-            <div className={'boardContainer'}>
-                <div className={'board'}>
-                    <div className="page top">
-                        {
-                            createBoard("")
-                        }
-                    </div>
-                    <div className="page bottom">
-                        {
-                            [...Array(81)].map((value, index) => {
-                                return (
-                                    <div className={'cell'} key={index}>{index}</div>
+const Board = ({ sudokuArray, editable, solutionArray }) => {
+  const [board, setBoard] = useState(sudokuArray);
 
-                                )
-                            })
-                        }
-                    </div>
-                    <div className="page left">
-                        {
-                            [...Array(81)].map((value, index) => {
-                                return (
-                                    <div className={'cell'} key={index}>{index}</div>
-
-                                )
-                            })
-                        }
-                    </div>
-                    <div className="page right">
-                        {
-                            [...Array(81)].map((value, index) => {
-                                return (
-                                    <div className={'cell'} key={index}>{index}</div>
-
-                                )
-                            })
-                        }
-                    </div>
-                    <div className="page front">
-                        Welcome Page!
-                    </div>
-                    <div className="page back">
-                        Final Page
-                    </div>
-                </div>
-            </div>
-
-        </>
-    )
-}
+  setBoardStateFunction(setBoard);
+  let cells = [];
+  for (let i = 0; i < board.length; i++) {
+    cells.push(
+      <Cell
+        number={board[i]}
+        index={i}
+        setBoard={setBoard}
+        editable={editable[i]}
+        key={i}
+        status={solutionArray[i] === board[i]}
+      />
+    );
+  }
+  return (
+    <>
+      <div className={"boardContainer"}>
+        <div className={"board"}>
+          <div className="page top">{cells}</div>
+          <div className="page bottom">{cells}</div>
+          <div className="page left">{cells}</div>
+          <div className="page right">{cells}</div>
+          <div className="page front">Welcome Page!</div>
+          <div className="page back">Final Page</div>
+        </div>
+      </div>
+    </>
+  );
+};
 
 export default Board;

@@ -1,21 +1,22 @@
-import {HashRouter, Route, Switch} from 'react-router-dom'
+import { HashRouter, Route, Switch } from "react-router-dom";
 import Game from "./components/Game";
 import Home from "./components/Home";
+import { sudokuArrays } from "./variables/sudokuArrays";
 
-import './styles/App.scss'
+import "./styles/App.scss";
 
 function App() {
   return (
     <div className="App">
       <HashRouter>
         <Switch>
-          <Route exact path={'/'}>
-            <Home/>
+          <Route exact path={"/"}>
+            <Home />
           </Route>
-          <Route exact path={'/game'}>
-            <Game/>
+          <Route exact path={"/game"}>
+            <Game sudokuArrays={sudokuArrays} difficulty={1} />
           </Route>
-          <Route path={'/'}>
+          <Route path={"/"}>
             <h1>404 Error</h1>
             <h2>Kat gya TERA!! Kuch ni hai idhar</h2>
           </Route>
