@@ -23,7 +23,9 @@ const Board = ({ sudokuArray, editable, solutionArray }) => {
     );
   }
   return (
-    <>
+    <div onWheel={()=>{
+      console.log('chl gya laude')}
+    }>
       <div className={"boardContainer"}>
         <div className={"board"}>
           <div className="page top">{cells}</div>
@@ -34,7 +36,7 @@ const Board = ({ sudokuArray, editable, solutionArray }) => {
           <div className="page back">Final Page</div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
