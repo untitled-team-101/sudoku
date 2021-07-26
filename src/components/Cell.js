@@ -58,6 +58,7 @@ function createClass(index, selection, prevClass) {
 }
 
 function Cell({ number, index, editable, status, selection }) {
+  // console.log(index, status)
   const onClickCell = (event) => {
     event.target.index = index;
     if (editable) {

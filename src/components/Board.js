@@ -3,10 +3,12 @@ import frontImg from "./img/front.gif";
 import backImg from "./img/back.gif";
 
 import Cell from "./Cell";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 
 import { setCellSelectionFunction } from "./context/SelectedCell";
 import {setBoardStateFunction} from "./context/BoardState";
+
+
 
 const Board = ({
                    sudokuArray,
@@ -14,16 +16,26 @@ const Board = ({
                    solutionArray,
                    difficulty,
                    setDifficulty,
-               }) => {
+               }) =>
+{
+  // console.log(solutionArray)
+  // console.log(sudokuArray)
+  // console.log(editable)
+  console.log("reset board", sudokuArray)
     const [board, setBoard] = useState(sudokuArray);
+    useEffect(() => {
+      setBoard(sudokuArray)
+    })
     if (JSON.stringify(board) === JSON.stringify(solutionArray)) {
-        setDifficulty(difficulty + 1);
+        if(difficulty < 5)
+          setDifficulty(difficulty + 1);
     }
     const [count, setCount] = useState(0);
     const [selection, setSelection] = useState([-1, -1]);
     setBoardStateFunction(setBoard);
     setCellSelectionFunction(setSelection);
     let cells = [];
+    console.log(solutionArray.map((a,i)=>{return a + '/' + board[i] + '/' + sudokuArray[i]}))
     for (let i = 0; i < board.length; i++) {
         cells.push(
           <Cell
@@ -45,10 +57,10 @@ const Board = ({
         },7000);
     }
     let arr = [];
-    arr.push(<span className="tooltiptext">Hello</span>);
-    arr.push(<span className="tooltiptext">Neeche to Dekho!!!</span>);
+    arr.push(<span className="tooltiptext">LOL</span>);
+    arr.push(<span className="tooltiptext">Neeche to Dekho !!!</span>);
     arr.push(<span className="tooltiptext">Abe Chutiye!!</span>);
-    arr.push(<span className="tooltiptext">Scroll kar!!!</span>);
+    arr.push(<span className="tooltiptext">Scroll kar nallay !!!</span>);
 
     const unsetStyling = {
         visibility: "unset",
@@ -58,9 +70,10 @@ const Board = ({
     return (
       <div
         onWheel={() => {
-            setDifficulty(1);
-            console.log("SCROLL", difficulty);
-        }}
+            if(difficulty < 1)
+              setDifficulty(1);
+          }
+        }
       >
           <div
             id={"boardContainer"}
