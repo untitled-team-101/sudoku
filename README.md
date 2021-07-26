@@ -6,7 +6,7 @@
 
 <hr>
 
-#### [Try it here](https://untitled-team-101.github.io/Whiteboard/)
+#### [Try it here](https://untitled-team-101.github.io/sudoku/build/)
 
 ## Screenshots
 
