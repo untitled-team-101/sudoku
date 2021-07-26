@@ -1,4 +1,4 @@
-![Whiteboard](https://github.com/sarveshspatil111/readme-docs/blob/main/assets/sudoku-banner.png)
+![Whiteboard](https://github.com/untitled-team-101/sudoku/blob/readme-docs/assets/sudoku-banner.png)
 
 # Sudoku
 
