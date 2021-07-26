@@ -10,17 +10,17 @@
 
 ## Screenshots
 
-|                                                      feature 1                                                      |                                                      feature 2                                                      |
+|                                                      1                                                      |                                                      2                                                      |
 | :-----------------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------------: |
-| ![](https://raw.githubusercontent.com/sarveshspatil111/sarveshspatil111/master/assets/gifs/ezgif.com-gif-maker.gif) | ![](https://raw.githubusercontent.com/sarveshspatil111/sarveshspatil111/master/assets/gifs/ezgif.com-gif-maker.gif) |
+| ![](https://github.com/untitled-team-101/sudoku/blob/main/assets/screenshots/Screenshot_2021-07-26_19-12-45.png) | ![](https://github.com/untitled-team-101/sudoku/blob/main/assets/screenshots/Screenshot_2021-07-26_19-13-10.png) |
 
-|                                                      feature 3                                                      |                                                      feature 4                                                      |
+|                                                      3                                                      |                                                      4                                                      |
 | :-----------------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------------: |
-| ![](https://raw.githubusercontent.com/sarveshspatil111/sarveshspatil111/master/assets/gifs/ezgif.com-gif-maker.gif) | ![](https://raw.githubusercontent.com/sarveshspatil111/sarveshspatil111/master/assets/gifs/ezgif.com-gif-maker.gif) |
+| ![](https://github.com/untitled-team-101/sudoku/blob/main/assets/screenshots/Screenshot_2021-07-26_19-14-00.png) | ![](https://github.com/untitled-team-101/sudoku/blob/main/assets/screenshots/Screenshot_2021-07-26_19-14-10.png) |
 
 ## Demo
 
-[Demo Video](https://drive.google.com/file/d/1pHFSM7wNHZyR-kEhiM7lWqcmrSjL07iA/view?usp=sharing)
+[Demo Video](https://drive.google.com/drive/folders/1MSlJORXndlTIY27cnbMz6qbm2l5897JU?usp=sharing)
 
 ## Contributors
 
