@@ -11,7 +11,7 @@ import Step1 from "./components/tutorial/Step1";
 import Step2 from "./components/tutorial/Step2";
 
 function App() {
-  const [difficulty, setDifficulty] = useState(0);
+  const [difficulty, setDifficulty] = useState(-1);
   return (
     <div className="App">
       <AnimatePresence exitBeforeEnter>

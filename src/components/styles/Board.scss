@@ -1,7 +1,3 @@
-* {
-  transition: 2s ease;
-}
-
 .boardContainer {
   perspective: 100vmin;
 
@@ -204,23 +200,29 @@
       height: 50vmin;
       animation: fade 5s forwards 5s;
     }
+
     .back {
       animation: fade 5s forwards 5s;
     }
+
     .top {
       animation: fade 5s forwards 5s;
     }
+
     .bottom {
       animation: fade 5s forwards 5s;
     }
+
     .left {
       animation: fade 5s forwards 5s;
     }
+
     .right {
       animation: fade 5s forwards 5s;
     }
   }
 }
+
 @keyframes frame1 {
   0% {
     transform: rotateX(-180deg) rotateY(0deg) rotateZ(0deg);
@@ -232,6 +234,7 @@
     transform: rotateX(-90deg) rotateY(0deg) rotateZ(36000deg);
   }
 }
+
 @keyframes fade {
   0% {
     opacity: 1;
@@ -240,3 +243,29 @@
     opacity: 0;
   }
 }
+
+
+.tooltip {
+  position: relative;
+}
+
+.tooltiptext{
+  position: absolute;
+  visibility: hidden;
+  background-color: lightblue;
+  color: black;
+  text-align: center;
+  border-radius: 6px;
+  padding: 1vh;
+  top: 0;
+  /* Position the tooltip */
+  font-size: 2vh;
+  z-index: 1;
+  transform: translate(50%, 380%);
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: unset;
+}
+
+
