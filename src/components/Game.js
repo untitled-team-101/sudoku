@@ -4,10 +4,14 @@ import "./styles/Game.scss";
 
 import { motion } from "framer-motion";
 
-const Game = ({ sudokuArrays, difficulty }) => {
+const Game = ({ sudokuArrays, difficulty, setDifficulty }) => {
   const index = Math.floor(Math.random() * 5);
-  const sudokuString = sudokuArrays[difficulty][0][index];
-  const solutionString = sudokuArrays[difficulty][1][index];
+  let sudokuString = sudokuArrays[0][0][index];
+  let solutionString = sudokuArrays[0][0][index];
+  if (difficulty > 0 && difficulty < 5) {
+    sudokuString = sudokuArrays[difficulty - 1][0][index];
+    solutionString = sudokuArrays[difficulty - 1][1][index];
+  }
   const sudokuArray = sudokuString.split("").map((x) => parseInt(x));
   const solutionArray = solutionString.split("").map((x) => parseInt(x));
   const editable = sudokuArray.map((item) => {
@@ -27,6 +31,7 @@ const Game = ({ sudokuArrays, difficulty }) => {
         editable={editable}
         solutionArray={solutionArray}
         difficulty={difficulty}
+        setDifficulty={setDifficulty}
       />
     </motion.div>
   );

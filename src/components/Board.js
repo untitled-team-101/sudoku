@@ -6,9 +6,17 @@ import { useState } from "react";
 
 import { setBoardStateFunction } from "./context/BoardState";
 
-const Board = ({ sudokuArray, editable, solutionArray, difficulty }) => {
+const Board = ({
+  sudokuArray,
+  editable,
+  solutionArray,
+  difficulty,
+  setDifficulty,
+}) => {
   const [board, setBoard] = useState(sudokuArray);
-
+  if (JSON.stringify(board) !== JSON.stringify(sudokuArray)) {
+    setDifficulty(difficulty+1);
+  }
   setBoardStateFunction(setBoard);
   let cells = [];
   for (let i = 0; i < board.length; i++) {
@@ -23,9 +31,14 @@ const Board = ({ sudokuArray, editable, solutionArray, difficulty }) => {
       />
     );
   }
+  const difficultyArray = ["", "xeasy", "easy", "medium", "hard", "done"];
   return (
-    <>
-      <div id={"boardContainer"} className={"boardContainer"}>
+    <div onWheel = {() => {
+      console.log("CHLRA");
+      setDifficulty(1);
+    }}> 
+
+      <div id={"boardContainer"} className={`boardContainer ${difficultyArray[difficulty]}`}>
         <div className={"board suggestion"}>
           <div className="page top" id={"hard"}>
             {cells}
@@ -52,7 +65,7 @@ const Board = ({ sudokuArray, editable, solutionArray, difficulty }) => {
         </div>
       </div>
       <div className={"controls"}></div>
-    </>
+    </div>
   );
 };
 

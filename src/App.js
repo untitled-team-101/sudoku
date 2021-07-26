@@ -2,6 +2,7 @@ import { HashRouter, Route, Switch } from "react-router-dom";
 import Game from "./components/Game";
 import Home from "./components/Home";
 import { sudokuArrays } from "./variables/sudokuArrays";
+import { useState } from "react";
 
 import { AnimatePresence, motion } from "framer-motion";
 
@@ -10,6 +11,7 @@ import Step1 from "./components/tutorial/Step1";
 import Step2 from "./components/tutorial/Step2";
 
 function App() {
+  const [difficulty, setDifficulty] = useState(0);
   return (
     <div className="App">
       <AnimatePresence exitBeforeEnter>
@@ -31,7 +33,11 @@ function App() {
             {/*</Route>*/}
 
             <Route exact path={"/game"}>
-              <Game sudokuArrays={sudokuArrays} difficulty={1} />
+              <Game
+                sudokuArrays={sudokuArrays}
+                difficulty={difficulty}
+                setDifficulty={setDifficulty}
+              />
             </Route>
             <Route path={"/"}>
               <h1>404 Error</h1>
