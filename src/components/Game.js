@@ -15,8 +15,7 @@ const Game = ({ sudokuArrays, difficulty, setDifficulty }) => {
   const sudokuArray = sudokuString.split("").map((x) => parseInt(x));
   const solutionArray = solutionString.split("").map((x) => parseInt(x));
   const editable = sudokuArray.map((item) => {
-    if (item === 0) return true;
-    else return false;
+    return item === 0;
   });
 
   return (

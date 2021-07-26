@@ -21,6 +21,7 @@
             }
         }
         .board {
+            --wide-border-color: #688051;
             height: 50vmin;
             width: 50vmin;
             //opacity: 1;
@@ -53,16 +54,16 @@
                     place-content: center;
                 }
                 .border-top {
-                    border-top: 0.2vmin solid;
+                    border-top: 0.2vmin solid var(--wide-border-color) !important;
                 }
                 .border-left {
-                    border-left: 0.2vmin solid;
+                    border-left: 0.2vmin solid var(--wide-border-color) !important;
                 }
                 .border-bottom {
-                    border-bottom: 0.2vmin solid;
+                    border-bottom: 0.2vmin solid var(--wide-border-color) !important;
                 }
                 .border-right {
-                    border-right: 0.2vmin solid;
+                    border-right: 0.2vmin solid var(--wide-border-color) !important;
                 }
             }
             .solved {
@@ -342,6 +343,7 @@
     }
     
     .tooltiptext {
+        position: absolute;
         visibility: hidden;
         background-color: lightblue;
         color: black;
@@ -352,7 +354,7 @@
         /* Position the tooltip */
         font-size: 2vh;
         z-index: 1;
-        transform: translate(50%, 380%);
+        transform: translate(0%, 200%);
     }
     
     .tooltip:hover .tooltiptext {

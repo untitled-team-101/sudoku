@@ -15,6 +15,8 @@ import {
 
 import { setBoardState } from "./context/BoardState";
 
+let gameCompleted = false
+
 const Board = ({
   sudokuArray,
   editable,
@@ -25,24 +27,22 @@ const Board = ({
   // console.log(solutionArray)
   // console.log(sudokuArray)
   // console.log(editable)
-  console.log("reset board", sudokuArray);
+  // console.log("reset board", sudokuArray);
   const [board, setBoard] = useState(sudokuArray);
   useEffect(() => {
     setBoard(sudokuArray);
   });
-  if (JSON.stringify(board) === JSON.stringify(solutionArray)) {
-    if (difficulty < 5) setDifficulty(difficulty + 1);
+  if(board.length >10){
+      gameCompleted = JSON.stringify(board) === JSON.stringify(solutionArray)
+
+    // else
+      // console.log("extra:", JSON.stringify(board), JSON.stringify(solutionArray))
   }
   const [count, setCount] = useState(0);
   const [selection, setSelection] = useState([-1, -1]);
   setBoardStateFunction(setBoard);
   setCellSelectionFunction(setSelection);
   let cells = [];
-  console.log(
-    solutionArray.map((a, i) => {
-      return a + "/" + board[i] + "/" + sudokuArray[i];
-    })
-  );
   for (let i = 0; i < board.length; i++) {
     cells.push(
       <Cell
@@ -64,9 +64,9 @@ const Board = ({
     }, 7000);
   };
   let arr = [];
-  arr.push(<span className="tooltiptext">LOL</span>);
+  arr.push(<span className="tooltiptext">Hello</span>);
   arr.push(<span className="tooltiptext">Neeche to Dekho !!!</span>);
-  arr.push(<span className="tooltiptext">Abe Chutiye!!</span>);
+  arr.push(<span className="tooltiptext">Abe Gadhay !!</span>);
   arr.push(<span className="tooltiptext">Scroll kar nallay !!!</span>);
 
   const unsetStyling = {
@@ -77,7 +77,7 @@ const Board = ({
   return (
     <div
       onWheel={() => {
-        if (difficulty < 1) setDifficulty(1);
+        if ((gameCompleted && difficulty < 5) || difficulty < 1) setDifficulty(1);
       }}
     >
       <div
@@ -150,6 +150,7 @@ const Board = ({
         {[...Array(9)].map((val, i) => {
           return (
             <div
+              key={i}
               className={"num"}
               id={"num-" + (i + 1)}
               onClick={() => {

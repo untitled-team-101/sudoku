@@ -3,7 +3,7 @@ import Game from "./components/Game";
 import Home from "./components/Home";
 import Credits from "./components/credits";
 import {sudokuArrays} from "./variables/sudokuArrays";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 
 import {AnimatePresence, motion} from "framer-motion";
 
@@ -13,6 +13,11 @@ import Step2 from "./components/tutorial/Step2";
 
 function App() {
     const [difficulty, setDifficulty] = useState(-1);
+    // useEffect(() => {
+    //     if(difficulty > -1)
+    //         setDifficulty(-1)
+    // })
+    // console.log(difficulty)
     return (
         <div className="App">
             <AnimatePresence exitBeforeEnter>
