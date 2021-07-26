@@ -3,8 +3,10 @@ import Board from "./Board";
 import "./styles/Game.scss";
 
 import { motion } from "framer-motion";
+import {useState} from "react";
 
 const Game = ({ sudokuArrays, difficulty, setDifficulty }) => {
+  const [gameCount, setGameCount] = useState(0);
   const index = Math.floor(Math.random() * 5);
   let sudokuString = sudokuArrays[0][0][index];
   let solutionString = sudokuArrays[0][0][index];
@@ -31,6 +33,7 @@ const Game = ({ sudokuArrays, difficulty, setDifficulty }) => {
         solutionArray={solutionArray}
         difficulty={difficulty}
         setDifficulty={setDifficulty}
+        setGameCount={setGameCount}
       />
     </motion.div>
   );
