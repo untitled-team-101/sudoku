@@ -343,6 +343,7 @@
     }
     
     .tooltiptext {
+        position: absolute;
         visibility: hidden;
         background-color: lightblue;
         color: black;
@@ -353,7 +354,7 @@
         /* Position the tooltip */
         font-size: 2vh;
         z-index: 1;
-        transform: translate(50%, 380%);
+        transform: translate(0%, 200%);
     }
     
     .tooltip:hover .tooltiptext {

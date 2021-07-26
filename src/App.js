@@ -14,9 +14,10 @@ import Step2 from "./components/tutorial/Step2";
 function App() {
     const [difficulty, setDifficulty] = useState(-1);
     // useEffect(() => {
-    //     setDifficulty(-1)
+    //     if(difficulty > -1)
+    //         setDifficulty(-1)
     // })
-    console.log(difficulty)
+    // console.log(difficulty)
     return (
         <div className="App">
             <AnimatePresence exitBeforeEnter>
