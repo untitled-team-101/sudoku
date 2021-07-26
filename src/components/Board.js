@@ -15,7 +15,7 @@ import {
 
 import { setBoardState } from "./context/BoardState";
 
-let gameCompleted = false
+let gameCompleted = false;
 
 const Board = ({
   sudokuArray,
@@ -23,7 +23,7 @@ const Board = ({
   solutionArray,
   difficulty,
   setDifficulty,
-  setGameCount
+  setGameCount,
 }) => {
   // console.log(solutionArray)
   // console.log(sudokuArray)
@@ -33,15 +33,17 @@ const Board = ({
   useEffect(() => {
     setBoard(sudokuArray);
   });
-  if(board.length >10){
-    let newCompleted = JSON.stringify(board) === JSON.stringify(solutionArray)
-      if(newCompleted && !gameCompleted)
-        if(difficulty>0 && difficulty < 3)
-          setTimeout(() =>{alert("scroll for next level")}, 100)
-        else if (difficulty === 5){
-          alert("You finished all levels")
-        }
-      gameCompleted = newCompleted
+  if (board.length > 10) {
+    let newCompleted = JSON.stringify(board) === JSON.stringify(solutionArray);
+    if (newCompleted && !gameCompleted)
+      if (difficulty > 0 && difficulty < 3)
+        setTimeout(() => {
+          alert("CONGRATULATIONS !!!\nScroll Down for Next Level !!");
+        }, 100);
+      else if (difficulty === 5) {
+        alert("CONGRATULATIONS !!!\nYOU WON THE GAME !!!");
+      }
+    gameCompleted = newCompleted;
   }
   const [count, setCount] = useState(0);
   const [selection, setSelection] = useState([-1, -1]);
@@ -82,7 +84,8 @@ const Board = ({
   return (
     <div
       onWheel={() => {
-        if ((gameCompleted && difficulty < 5) || difficulty < 1) setDifficulty(1+difficulty);
+        if ((gameCompleted && difficulty < 5) || difficulty < 1)
+          setDifficulty(1 + difficulty);
       }}
     >
       <div
@@ -129,107 +132,60 @@ const Board = ({
           />
         </div>
       </div>
-<<<<<<< HEAD
-      {
-        difficulty > 0 && difficulty < 5 ?
-          <>
+      {difficulty > 0 && difficulty < 5 ? (
+        <>
           <div className={"controls "}>
-            <div className={"auto-pilot"}>
+            <div className={"auto-pilot tooltipGame"}>
+              <span className="tooltiptextGame">Auto Check</span>
               <input
                 type="checkbox"
                 className="switch3"
                 id="switch3"
                 onInput={(e) => {
-                  document.querySelector(".board").classList.toggle("suggestion");
+                  document
+                    .querySelector(".board")
+                    .classList.toggle("suggestion");
                 }}
               />
-              <label htmlFor="switch3"/>
-=======
-      <div className={"controls "}>
-        <div className={"auto-pilot tooltipGame"}>
-          <span className="tooltiptextGame">Checker</span>
-          <input
-            type="checkbox"
-            className="switch3"
-            id="switch3"
-            onInput={(e) => {
-              document.querySelector(".board").classList.toggle("suggestion");
-            }}
-          />
-          <label htmlFor="switch3" />
-        </div>
-        <div className={"hints tooltipGame"}>
-          <span className="tooltiptextGame">Hint</span>
-          <i className="far fa-lightbulb-on" onClick={()=>{
-            for(let i in board){
-              if(board[i] === 0){
-                board[i] = solutionArray[i]
-                break
-              }
-            }
-            setBoard([...board])
-          }}/>
-        </div>
-        <div className={"refresh tooltipGame"}>
-          <span className="tooltiptextGame">Reset</span>
-          <i className="fas fa-repeat-alt" onClick={()=>{
-            setGameCount(a => a+1)
-          }}/>
-        </div>
-        <div className={"lose tooltipGame"}>
-          <span className="tooltiptextGame">Auto Solve</span>
-          <i className="fas fa-heart-broken" onClick={()=>{
-            for(let i in board){
-              if(board[i] === 0){
-                board[i] = solutionArray[i]
-              }
-            }
-            setBoard([...board])
-          }}/>
-        </div>
-      </div>
-      <div className={"numpad "}>
-        {[...Array(9)].map((val, i) => {
-          return (
-            <div
-              key={i}
-              className={"num"}
-              id={"num-" + (i + 1)}
-              onClick={() => {
-                setBoardState((prevState) => {
-                  prevState[getSelectedCell()?.index] = i + 1;
-                  return [...prevState];
-                });
-              }}
-            >
-              {i + 1}
->>>>>>> bugFixes
+              <label htmlFor="switch3" />
             </div>
-            <div className={"hints"}>
-              <i className="far fa-lightbulb-on" onClick={() => {
-                for (let i in board) {
-                  if (board[i] !== solutionArray[i]) {
-                    board[i] = solutionArray[i]
-                    break
+            <div className={"hints tooltipGame"}>
+              <span className="tooltiptextGame">Auto Solve</span>
+              <i
+                className="far fa-lightbulb-on"
+                onClick={() => {
+                  for (let i in board) {
+                    if (board[i] !== solutionArray[i]) {
+                      board[i] = solutionArray[i];
+                      break;
+                    }
                   }
-                }
-                setBoard([...board])
-              }}/>
+                  setBoard([...board]);
+                }}
+              />
             </div>
-            <div className={"refresh"}>
-              <i className="fas fa-repeat-alt" onClick={() => {
-                setGameCount(a => a + 1)
-              }}/>
+            <div className={"refresh tooltipGame"}>
+              <span className="tooltiptextGame">New Game</span>
+              <i
+                className="fas fa-repeat-alt"
+                onClick={() => {
+                  setGameCount((a) => a + 1);
+                }}
+              />
             </div>
-            <div className={"lose"}>
-              <i className="fas fa-heart-broken" onClick={() => {
-                for (let i in board) {
-                  if (board[i] !== solutionArray[i]) {
-                    board[i] = solutionArray[i]
+            <div className={"lose tooltipGame"}>
+              <span className="tooltiptextGame">Show Solution</span>
+              <i
+                className="fas fa-heart-broken"
+                onClick={() => {
+                  for (let i in board) {
+                    if (board[i] !== solutionArray[i]) {
+                      board[i] = solutionArray[i];
+                    }
                   }
-                }
-                setBoard([...board])
-              }}/>
+                  setBoard([...board]);
+                }}
+              />
             </div>
           </div>
           <div className={"numpad "}>
@@ -251,8 +207,10 @@ const Board = ({
               );
             })}
           </div>
-        </>:""
-      }
+        </>
+      ) : (
+        ""
+      )}
     </div>
   );
 };

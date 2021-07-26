@@ -38,7 +38,7 @@ const Step2 = () => {
                             <div className={'step2Para1'}>
                                 <p className={'para'}>
                                     <div>
-                                        <h1>Step 4</h1>
+                                        <h1>Step 3</h1>
                                         <br/>
                                     </div>
                                     &#8226;Use <span id={'special'}>“process of elimination”</span> by seeing which
@@ -73,7 +73,7 @@ const Step2 = () => {
                             <div className={'step2Para2'}>
                                 <p className={'para'}>
                                     <div>
-                                        <h1>Step 3</h1>
+                                        <h1>Step 4</h1>
                                         <br/>
                                     </div>
 
