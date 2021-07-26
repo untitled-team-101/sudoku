@@ -129,64 +129,69 @@ const Board = ({
           />
         </div>
       </div>
-      <div className={"controls "}>
-        <div className={"auto-pilot"}>
-          <input
-            type="checkbox"
-            className="switch3"
-            id="switch3"
-            onInput={(e) => {
-              document.querySelector(".board").classList.toggle("suggestion");
-            }}
-          />
-          <label htmlFor="switch3" />
-        </div>
-        <div className={"hints"}>
-          <i className="far fa-lightbulb-on" onClick={()=>{
-            for(let i in board){
-              if(board[i] === 0){
-                board[i] = solutionArray[i]
-                break
-              }
-            }
-            setBoard([...board])
-          }}/>
-        </div>
-        <div className={"refresh"}>
-          <i className="fas fa-repeat-alt" onClick={()=>{
-            setGameCount(a => a+1)
-          }}/>
-        </div>
-        <div className={"lose"}>
-          <i className="fas fa-heart-broken" onClick={()=>{
-            for(let i in board){
-              if(board[i] === 0){
-                board[i] = solutionArray[i]
-              }
-            }
-            setBoard([...board])
-          }}/>
-        </div>
-      </div>
-      <div className={"numpad "}>
-        {[...Array(9)].map((val, i) => {
-          return (
-            <div
-              key={i}
-              className={"num"}
-              id={"num-" + (i + 1)}
-              onClick={() => {
-                setBoardState((prevState) => {
-                  prevState[getSelectedCell()?.index] = i + 1;
-                  return [...prevState];
-                });
-              }}
-            >
-              {i + 1}
+      {
+        difficulty > 0 && difficulty < 5 ?
+          <>
+          <div className={"controls "}>
+            <div className={"auto-pilot"}>
+              <input
+                type="checkbox"
+                className="switch3"
+                id="switch3"
+                onInput={(e) => {
+                  document.querySelector(".board").classList.toggle("suggestion");
+                }}
+              />
+              <label htmlFor="switch3"/>
             </div>
-          );
-        })}
-      </div>
+            <div className={"hints"}>
+              <i className="far fa-lightbulb-on" onClick={() => {
+                for (let i in board) {
+                  if (board[i] !== solutionArray[i]) {
+                    board[i] = solutionArray[i]
+                    break
+                  }
+                }
+                setBoard([...board])
+              }}/>
+            </div>
+            <div className={"refresh"}>
+              <i className="fas fa-repeat-alt" onClick={() => {
+                setGameCount(a => a + 1)
+              }}/>
+            </div>
+            <div className={"lose"}>
+              <i className="fas fa-heart-broken" onClick={() => {
+                for (let i in board) {
+                  if (board[i] !== solutionArray[i]) {
+                    board[i] = solutionArray[i]
+                  }
+                }
+                setBoard([...board])
+              }}/>
+            </div>
+          </div>
+          <div className={"numpad "}>
+            {[...Array(9)].map((val, i) => {
+              return (
+                <div
+                  key={i}
+                  className={"num"}
+                  id={"num-" + (i + 1)}
+                  onClick={() => {
+                    setBoardState((prevState) => {
+                      prevState[getSelectedCell()?.index] = i + 1;
+                      return [...prevState];
+                    });
+                  }}
+                >
+                  {i + 1}
+                </div>
+              );
+            })}
+          </div>
+        </>:""
+      }
     </div>
   );
 };
