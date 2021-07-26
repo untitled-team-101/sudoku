@@ -19,6 +19,7 @@ const Game = ({ sudokuArrays, difficulty }) => {
         sudokuArray={sudokuArray}
         editable={editable}
         solutionArray={solutionArray}
+        difficulty={difficulty}
       />
     </div>
   );

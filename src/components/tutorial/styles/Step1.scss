@@ -1,99 +1,214 @@
-@font-face {
-    font-family: Roboto-custom;
-    src:url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap');
+
+.step1 {
+  background: rgb(255, 255, 255);
+  background: radial-gradient(circle, rgba(255, 255, 255, 1) 30%, rgba(229, 233, 240, 1) 100%);
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  height: 100vh;
+
+  .step1Title {
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    font-size: 2vmin;
+    justify-content: center;
+    background-color: lightblue;
+    padding: 1.5vmin;
+  }
+
+  .step1Containers {
+    display: flex;
+    font-size: 2.5vmin;
+    flex-flow: column;
+
+    .step1Container1 {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 2vmin;
+      border-bottom: 0.2vmin black solid;
+
+      .step1Image1 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40%;
+
+        .image {
+          height: 38vmin;
+        }
+      }
+
+      .step1Para1 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+
+        .para {
+          width: 50vw;
+        }
+      }
+    }
+
+    .step1Container2 {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 2vmin;
+
+      .step1Image2 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40%;
+
+        .image {
+          width: 38vmin;
+        }
+      }
+
+      .step1Para2 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+
+        .para {
+          width: 50vw;
+        }
+      }
+    }
+  }
+
+  .step1Btns {
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    justify-content: flex-end;
+
+    .step1NextBtn {
+      border-radius: 1vmin;
+      cursor: pointer;
+      font-size: 3vmax;
+      background-color: lightblue;
+      padding: 1.5vmin;
+      box-shadow: lightblue 0 0 0.4vmin 0.2vmin;
+    }
+
+    .step1SkipBtn {
+      border-radius: 1vmin;
+      cursor: pointer;
+      font-size: 3vmax;
+      background-color: lightblue;
+      padding: 1.5vmin;
+      box-shadow: lightblue 0 0 0.4vmin 0.2vmin;
+      margin: 0 1vmin 0 1vmin;
+    }
+  }
+
 }
 
-.step1{
-    background: rgb(255,255,255);
-    background: radial-gradient(circle, rgba(255,255,255,1) 30%, rgba(229,233,240,1) 100%);
-    font-family: Roboto-custom,sans-serif, monospace;
-    height: 100%;
-    .step1Title{
+@media only screen and (max-device-width: 600px) {
+  .step1 {
+    .step1Title {
+      font-size: 5vmin;
+      justify-content: center;
+      background-color: lightblue;
+      padding: 1.5vmin;
+    }
+
+    .step1Containers {
+      font-size: 4vmin;
+      flex-flow: column;
+
+      .step1Container1 {
+        width: 100vw;
+        padding: 5vmin;
+        flex-direction: column;
+        border-bottom: 0.1vmin black solid;
+
+        .step1Image1 {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 40%;
+
+          .image {
+            height: 80vmin;
+          }
+        }
+
+        .step1Para1 {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 100%;
+
+          .para {
+            width: 80vw;
+          }
+        }
+      }
+
+      .step1Container2 {
+        width: 100%;
         display: flex;
-        font-size: 2vmin;
-        justify-content: center;
+        align-items: center;
+        justify-content: space-between;
+        padding: 2vmin;
+
+        .step1Image2 {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 40%;
+
+          .image {
+            width: 38vmin;
+          }
+        }
+
+        .step1Para2 {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 100%;
+
+          .para {
+            width: 50vw;
+          }
+        }
+      }
+    }
+
+    .step1Btns {
+      display: flex;
+      flex-flow: row;
+      align-items: center;
+      justify-content: flex-end;
+
+      .step1NextBtn {
+        border-radius: 1vmin;
+        cursor: pointer;
+        font-size: 3vmax;
         background-color: lightblue;
         padding: 1.5vmin;
+        box-shadow: lightblue 0 0 0.4vmin 0.2vmin;
+      }
+
+      .step1SkipBtn {
+        border-radius: 1vmin;
+        cursor: pointer;
+        font-size: 3vmax;
+        background-color: lightblue;
+        padding: 1.5vmin;
+        box-shadow: lightblue 0 0 0.4vmin 0.2vmin;
+        margin: 0 1vmin 0 1vmin;
+      }
     }
 
-    .step1Containers{
-        display: flex;
-        font-size: 2.5vmin;
-        flex-flow: column;
-        .step1Container1{
-            width: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 2vmin;
-            border-bottom: 0.2vmin black solid;
-            .step1Image1{
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                width: 40%;
-                .image{
-                    height: 38vmin;
-                }
-            }
-            .step1Para1{
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                width: 100%;
-                .para{
-                    width: 50vw;
-                }
-            }
-        }
-        .step1Container2{
-            width: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 2vmin;
-            .step1Image2{
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                width: 40%;
-                .image{
-                    width: 38vmin;
-                }
-            }
-            .step1Para2{
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                width: 100%;
-                .para{
-                    width: 50vw;
-                }
-            }
-        }
-    }
-    .step1Btns{
-        display: flex;
-        flex-flow: row;
-        align-items: center;
-        justify-content: flex-end;
-        .step1NextBtn{
-            border-radius: 1vmin;
-            cursor: pointer;
-            font-size: 3vmin;
-            background-color: lightblue;
-            padding: 1.5vmin;
-            box-shadow: lightblue 0 0 0.4vmin 0.2vmin;
-        }
-        .step1SkipBtn{
-            border-radius: 1vmin;
-            cursor: pointer;
-            font-size: 3vmin;
-            background-color: lightblue;
-            padding: 1.5vmin;
-            box-shadow: lightblue 0 0 0.4vmin 0.2vmin;
-            margin: 0 1vmin 0 1vmin;
-        }
-    }
-
+  }
 }

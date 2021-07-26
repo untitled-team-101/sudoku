@@ -25,6 +25,9 @@ function App() {
           <Route exact path={'/game'}>
             <Game sudokuArrays={sudokuArrays} difficulty={1} />
           </Route>
+          {/*<Route exact path={'/credits'}>*/}
+            {/*<Credits />*/}
+          {/*</Route>*/}
           <Route path={"/"}>
             <h1>404 Error</h1>
             <h2>Kat gya TERA!! Kuch ni hai idhar</h2>
