@@ -67,7 +67,7 @@ const Board = ({
   let backClick = () => {
     document.getElementById("board").classList.add("animate");
     setTimeout(() => {
-      window.location = "/#/credits";
+      window.location.hash = "#/credits";
     }, 7000);
   };
   let arr = [];
