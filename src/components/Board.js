@@ -69,10 +69,10 @@ const Board = ({
     }, 7000);
   };
   let arr = [];
-  arr.push(<span className="tooltiptext">Hello</span>);
-  arr.push(<span className="tooltiptext">Neeche to Dekho !!!</span>);
-  arr.push(<span className="tooltiptext">Abe Gadhay !!</span>);
-  arr.push(<span className="tooltiptext">Scroll kar nallay !!!</span>);
+  arr.push(<span className="tooltiptext">Hello there!!</span>);
+  arr.push(<span className="tooltiptext">Don't know how to proceed??</span>);
+  arr.push(<span className="tooltiptext">Well, Try some more!!!</span>);
+  arr.push(<span className="tooltiptext">LOL!! Scroll to proceed!!</span>);
 
   const unsetStyling = {
     visibility: "unset",

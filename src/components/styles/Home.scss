@@ -1,10 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap');
-
+@font-face {
+  font-family: Roboto-custom;
+  src:url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+}
 .home{
 
   background: rgb(255,255,255);
   background: radial-gradient(circle, rgba(255,255,255,1) 30%, rgba(229,233,240,1) 100%);
-  font-family: 'Roboto', sans-serif;
+  font-family: Roboto-custom, sans-serif, monospace;
 
   .homeContent {
     display: flex;

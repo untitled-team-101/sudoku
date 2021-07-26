@@ -9,16 +9,23 @@ import {motion} from 'framer-motion'
 
 const Step2 = () => {
 
-    const styling = {
 
+    const pageTranstion = {
+        in:{
+            opacity:1,
+            y:0
+        },
+        out:{
+            opacity: 0,
+            y:"100%"
+        }
     }
-
 
     return (
 
-        <motion.div initial={{opacity: 0}}
-                    animate={{opacity: 1}}
-                    exit={{opacity: 0}}>
+        <motion.div initial="out"
+                    animate="in"
+                    exit="out" variants={pageTranstion}>
 
             <div className={'step2'}>
                 <div>
@@ -30,61 +37,54 @@ const Step2 = () => {
                         <div className={'step2Container1'}>
                             <div className={'step2Para1'}>
                                 <p className={'para'}>
-                                    <div>&#8226;Sudoku is played on a grid of 9 x 9 spaces. Within the rows and
-                                        columns are 9 “squares” (made up of 3 x 3 spaces).
+                                    <div>
+                                        <h1>Step 4</h1>
+                                        <br/>
                                     </div>
+                                    &#8226;Use <span id={'special'}>“process of elimination”</span> by seeing which
+                                    other numbers are
+                                    <span id={'info'}> already included within each square</span> – since there can
+                                    be <span id={'danger'}>NO duplication of numbers </span>
+                                    1-9 within each square.
                                     <br/>
-                                    <div>&#8226;Each row, column and square (9 spaces each) needs to be filled out
-                                        with the numbers 1-9, without repeating any numbers within the row, column or
-                                        square.
-                                    </div>
                                     <br/>
-                                    <div>&#8226;Does it sound complicated? As you can see from the image below of an
-                                        actual
-                                        Sudoku grid, each
-                                        Sudoku grid comes with a few spaces already filled in; the more spaces filled
-                                        in,
-                                        the easier
-                                        the game – the more difficult Sudoku puzzles have very few spaces that are
-                                        already
-                                        filled
-                                        in.
-                                    </div>
+                                    &#8226;Here, There are already <span id={'info'}> number 1s in the
+                                    top left and center left squares</span> (<span id={'danger'}>circled in red</span>).
+                                    So, only one space left in the far left column where a 1 could
+                                    possibly go – <span id={'info'}>circled in green</span>
+                                    <br/>
+                                    <br/>
+                                    &#8226;That's how this process is implemented.
                                 </p>
+
                             </div>
                             <div className={'step2Image1'}>
-                                <img className={'image'} src={step1Img1} alt={'Failed to load image'}/>
+                                <img className={'image'} src={step2Img2} alt={'Failed to load image'}/>
                             </div>
+
                         </div>
 
                         <div className={'step2Container2'}>
 
                             <div className={'step2Image2'}>
-                                <img className={'image'} src={step2Img2} alt={'Failed to load image'}/>
+                                <img className={'image'} src={step1Img1} alt={'Failed to load image'}/>
                             </div>
 
                             <div className={'step2Para2'}>
                                 <p className={'para'}>
-                                    <div>&#8226;Sudoku is played on a grid of 9 x 9 spaces. Within the rows and
-                                        columns are 9 “squares” (made up of 3 x 3 spaces).
+                                    <div>
+                                        <h1>Step 3</h1>
+                                        <br/>
                                     </div>
+
+                                    &#8226;<span id={'special'}>Dont Guess!!</span><span
+                                    id={'info'}> Keep scanning</span> and look for opportunity
                                     <br/>
-                                    <div>&#8226;Each row, column and square (9 spaces each) needs to be filled out
-                                        with the numbers 1-9, without repeating any numbers within the row, column or
-                                        square.
-                                    </div>
                                     <br/>
-                                    <div>&#8226;Does it sound complicated? As you can see from the image below of an
-                                        actual
-                                        Sudoku grid, each
-                                        Sudoku grid comes with a few spaces already filled in; the more spaces filled
-                                        in,
-                                        the easier
-                                        the game – the more difficult Sudoku puzzles have very few spaces that are
-                                        already
-                                        filled
-                                        in.
-                                    </div>
+                                    &#8226;Sudoku requires <span id={'info'}> patience, insights, and recognition of patterns</span>.
+                                    <br/>
+                                    <br/>
+                                    &#8226;Now, <span id={'special'}>Let's Play!!</span>
                                 </p>
                             </div>
                         </div>
