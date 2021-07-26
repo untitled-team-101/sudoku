@@ -1,14 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100&display=swap');
 
 .step1 {
   background: rgb(255, 255, 255);
   background: radial-gradient(circle, rgba(255, 255, 255, 1) 30%, rgba(229, 233, 240, 1) 100%);
-  font-family: 'Roboto', sans-serif;
-  font-weight: 400;
-  height: 100vh;
+  font-family: 'Roboto Mono', monospace;  font-weight: 400;
+  height: 100%;
 
   .step1Title {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto Mono', monospace;
     display: flex;
     font-size: 2vmin;
     justify-content: center;
@@ -49,6 +48,18 @@
         .para {
           width: 50vw;
         }
+        .para #info{
+          color: green;
+          font-weight: 600;
+        }
+        .para #danger{
+          color: red;
+          font-weight: 600;
+        }
+        .para #special{
+          color: blue;
+          font-weight: 600;
+        }
       }
     }
 
@@ -79,6 +90,18 @@
         .para {
           width: 50vw;
         }
+        .para #info{
+          color: green;
+          font-weight: 600;
+        }
+        .para #danger{
+          color: red;
+          font-weight: 600;
+        }
+        .para #special{
+          color: blue;
+          font-weight: 600;
+        }
       }
     }
   }
@@ -92,7 +115,7 @@
     .step1NextBtn {
       border-radius: 1vmin;
       cursor: pointer;
-      font-size: 3vmax;
+      font-size: 3vmin;
       background-color: lightblue;
       padding: 1.5vmin;
       box-shadow: lightblue 0 0 0.4vmin 0.2vmin;
@@ -101,7 +124,7 @@
     .step1SkipBtn {
       border-radius: 1vmin;
       cursor: pointer;
-      font-size: 3vmax;
+      font-size: 3vmin;
       background-color: lightblue;
       padding: 1.5vmin;
       box-shadow: lightblue 0 0 0.4vmin 0.2vmin;
@@ -152,6 +175,10 @@
           }
         }
       }
+      span{
+         color: lightblue !important;
+        font-weight: 800;
+       }
 
       .step1Container2 {
         width: 100%;

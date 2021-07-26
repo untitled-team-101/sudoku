@@ -1,10 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100&display=swap');
 
 .home{
 
   background: rgb(255,255,255);
   background: radial-gradient(circle, rgba(255,255,255,1) 30%, rgba(229,233,240,1) 100%);
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto Mono', monospace;
 
   .homeContent {
     display: flex;

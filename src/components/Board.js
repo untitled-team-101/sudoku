@@ -69,10 +69,10 @@ const Board = ({
     }, 7000);
   };
   let arr = [];
-  arr.push(<span className="tooltiptext">Hello</span>);
-  arr.push(<span className="tooltiptext">Neeche to Dekho !!!</span>);
-  arr.push(<span className="tooltiptext">Abe Gadhay !!</span>);
-  arr.push(<span className="tooltiptext">Scroll kar nallay !!!</span>);
+  arr.push(<span className="tooltiptext">Hello there!!</span>);
+  arr.push(<span className="tooltiptext">Don't know how to proceed??</span>);
+  arr.push(<span className="tooltiptext">Well, Try some more!!!</span>);
+  arr.push(<span className="tooltiptext">LOL!! Scroll to proceed!!</span>);
 
   const unsetStyling = {
     visibility: "unset",
@@ -129,6 +129,7 @@ const Board = ({
           />
         </div>
       </div>
+<<<<<<< HEAD
       {
         difficulty > 0 && difficulty < 5 ?
           <>
@@ -143,6 +144,66 @@ const Board = ({
                 }}
               />
               <label htmlFor="switch3"/>
+=======
+      <div className={"controls "}>
+        <div className={"auto-pilot tooltipGame"}>
+          <span className="tooltiptextGame">Checker</span>
+          <input
+            type="checkbox"
+            className="switch3"
+            id="switch3"
+            onInput={(e) => {
+              document.querySelector(".board").classList.toggle("suggestion");
+            }}
+          />
+          <label htmlFor="switch3" />
+        </div>
+        <div className={"hints tooltipGame"}>
+          <span className="tooltiptextGame">Hint</span>
+          <i className="far fa-lightbulb-on" onClick={()=>{
+            for(let i in board){
+              if(board[i] === 0){
+                board[i] = solutionArray[i]
+                break
+              }
+            }
+            setBoard([...board])
+          }}/>
+        </div>
+        <div className={"refresh tooltipGame"}>
+          <span className="tooltiptextGame">Reset</span>
+          <i className="fas fa-repeat-alt" onClick={()=>{
+            setGameCount(a => a+1)
+          }}/>
+        </div>
+        <div className={"lose tooltipGame"}>
+          <span className="tooltiptextGame">Auto Solve</span>
+          <i className="fas fa-heart-broken" onClick={()=>{
+            for(let i in board){
+              if(board[i] === 0){
+                board[i] = solutionArray[i]
+              }
+            }
+            setBoard([...board])
+          }}/>
+        </div>
+      </div>
+      <div className={"numpad "}>
+        {[...Array(9)].map((val, i) => {
+          return (
+            <div
+              key={i}
+              className={"num"}
+              id={"num-" + (i + 1)}
+              onClick={() => {
+                setBoardState((prevState) => {
+                  prevState[getSelectedCell()?.index] = i + 1;
+                  return [...prevState];
+                });
+              }}
+            >
+              {i + 1}
+>>>>>>> bugFixes
             </div>
             <div className={"hints"}>
               <i className="far fa-lightbulb-on" onClick={() => {

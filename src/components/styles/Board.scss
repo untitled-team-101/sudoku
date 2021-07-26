@@ -1,4 +1,6 @@
-    .boardContainer {
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100&display=swap');
+
+.boardContainer {
         transition: 2s ease;
         .suggestion {
             .cell.correct {
@@ -339,6 +341,7 @@
     }
     
     .tooltip {
+        font-family: 'Roboto Mono', monospace;
         position: relative;
     }
     
@@ -354,9 +357,33 @@
         /* Position the tooltip */
         font-size: 2vh;
         z-index: 1;
-        transform: translate(0%, 200%);
+        transform: translate(90%,300%);
     }
     
     .tooltip:hover .tooltiptext {
+        visibility: unset;
+    }
+
+    .tooltipGame {
+        font-family: 'Roboto Mono', monospace;
+        position: relative;
+    }
+
+    .tooltiptextGame {
+        position: absolute;
+        visibility: hidden;
+        background-color: lightblue;
+        color: black;
+        text-align: center;
+        border-radius: 6px;
+        padding: 1vh;
+        top: 0;
+        /* Position the tooltip */
+        font-size: 2vh;
+        z-index: 1;
+        transform: translate(60%, -40%);
+    }
+
+    .tooltipGame:hover .tooltiptextGame {
         visibility: unset;
     }
