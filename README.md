@@ -12,11 +12,11 @@
 
 |                                                      1                                                      |                                                      2                                                      |
 | :-----------------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------------: |
-| ![](https://github.com/untitled-team-101/sudoku/blob/main/assets/screenshots/Screenshot_2021-07-26_19-12-45.png) | ![](https://github.com/untitled-team-101/sudoku/blob/main/assets/screenshots/Screenshot_2021-07-26_19-13-10.png) |
+| ![](https://github.com/untitled-team-101/sudoku/blob/main/assets/screenshots/SC1.png) | ![](https://github.com/untitled-team-101/sudoku/blob/main/assets/screenshots/SC2.png) |
 
 |                                                      3                                                      |                                                      4                                                      |
 | :-----------------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------------: |
-| ![](https://github.com/untitled-team-101/sudoku/blob/main/assets/screenshots/Screenshot_2021-07-26_19-14-00.png) | ![](https://github.com/untitled-team-101/sudoku/blob/main/assets/screenshots/Screenshot_2021-07-26_19-14-10.png) |
+| ![](https://github.com/untitled-team-101/sudoku/blob/main/assets/screenshots/SC3.png) | ![](https://github.com/untitled-team-101/sudoku/blob/main/assets/screenshots/SC4.png) |
 
 ## Demo
 
