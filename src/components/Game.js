@@ -2,6 +2,8 @@ import Board from "./Board";
 
 import "./styles/Game.scss";
 
+import { motion } from "framer-motion";
+
 const Game = ({ sudokuArrays, difficulty }) => {
   const index = Math.floor(Math.random() * 5);
   const sudokuString = sudokuArrays[difficulty][0][index];
@@ -14,14 +16,19 @@ const Game = ({ sudokuArrays, difficulty }) => {
   });
 
   return (
-    <div className={"gamePage"}>
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      className={"gamePage"}
+    >
       <Board
         sudokuArray={sudokuArray}
         editable={editable}
         solutionArray={solutionArray}
         difficulty={difficulty}
       />
-    </div>
+    </motion.div>
   );
 };
 
