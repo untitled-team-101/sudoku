@@ -1,16 +1,13 @@
-@font-face {
-  font-family: Roboto-custom;
-  src:url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
-}
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100&display=swap');
+
 .step1 {
   background: rgb(255, 255, 255);
   background: radial-gradient(circle, rgba(255, 255, 255, 1) 30%, rgba(229, 233, 240, 1) 100%);
-  font-family: Roboto-custom, sans-serif, monospace;
-  font-weight: 400;
+  font-family: 'Roboto Mono', monospace;  font-weight: 400;
   height: 100%;
 
   .step1Title {
-    font-family: Roboto-custom, sans-serif, monospace;
+    font-family: 'Roboto Mono', monospace;
     display: flex;
     font-size: 2vmin;
     justify-content: center;

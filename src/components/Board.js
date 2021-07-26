@@ -130,7 +130,8 @@ const Board = ({
         </div>
       </div>
       <div className={"controls "}>
-        <div className={"auto-pilot"}>
+        <div className={"auto-pilot tooltipGame"}>
+          <span className="tooltiptextGame">Checker</span>
           <input
             type="checkbox"
             className="switch3"
@@ -141,7 +142,8 @@ const Board = ({
           />
           <label htmlFor="switch3" />
         </div>
-        <div className={"hints"}>
+        <div className={"hints tooltipGame"}>
+          <span className="tooltiptextGame">Hint</span>
           <i className="far fa-lightbulb-on" onClick={()=>{
             for(let i in board){
               if(board[i] === 0){
@@ -152,12 +154,14 @@ const Board = ({
             setBoard([...board])
           }}/>
         </div>
-        <div className={"refresh"}>
+        <div className={"refresh tooltipGame"}>
+          <span className="tooltiptextGame">Reset</span>
           <i className="fas fa-repeat-alt" onClick={()=>{
             setGameCount(a => a+1)
           }}/>
         </div>
-        <div className={"lose"}>
+        <div className={"lose tooltipGame"}>
+          <span className="tooltiptextGame">Auto Solve</span>
           <i className="fas fa-heart-broken" onClick={()=>{
             for(let i in board){
               if(board[i] === 0){
