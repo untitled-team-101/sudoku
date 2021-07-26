@@ -66,7 +66,7 @@ const Board = ({
             id={"boardContainer"}
             className={`boardContainer ${difficultyArray[difficulty]}`}
           >
-              <div className={"board suggestion"} id={'board'}>
+              <div className={"board"} id={'board'}>
                     <div className="page top" id={'hard'}>{cells}</div>
                     <div className="page bottom" id={'xeasy'}>{cells}</div>
                     <div className="page left" id={'medium'}>{cells}</div>
