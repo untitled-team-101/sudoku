@@ -23,6 +23,7 @@ const Board = ({
   solutionArray,
   difficulty,
   setDifficulty,
+  setGameCount
 }) => {
   // console.log(solutionArray)
   // console.log(sudokuArray)
@@ -33,10 +34,14 @@ const Board = ({
     setBoard(sudokuArray);
   });
   if(board.length >10){
-      gameCompleted = JSON.stringify(board) === JSON.stringify(solutionArray)
-
-    // else
-      // console.log("extra:", JSON.stringify(board), JSON.stringify(solutionArray))
+    let newCompleted = JSON.stringify(board) === JSON.stringify(solutionArray)
+      if(newCompleted && !gameCompleted)
+        if(difficulty>0 && difficulty < 3)
+          setTimeout(() =>{alert("scroll for next level")}, 100)
+        else if (difficulty === 5){
+          alert("You finished all levels")
+        }
+      gameCompleted = newCompleted
   }
   const [count, setCount] = useState(0);
   const [selection, setSelection] = useState([-1, -1]);
@@ -77,7 +82,7 @@ const Board = ({
   return (
     <div
       onWheel={() => {
-        if ((gameCompleted && difficulty < 5) || difficulty < 1) setDifficulty(1);
+        if ((gameCompleted && difficulty < 5) || difficulty < 1) setDifficulty(1+difficulty);
       }}
     >
       <div
@@ -137,13 +142,30 @@ const Board = ({
           <label htmlFor="switch3" />
         </div>
         <div className={"hints"}>
-          <i className="far fa-lightbulb-on" />
+          <i className="far fa-lightbulb-on" onClick={()=>{
+            for(let i in board){
+              if(board[i] === 0){
+                board[i] = solutionArray[i]
+                break
+              }
+            }
+            setBoard([...board])
+          }}/>
         </div>
         <div className={"refresh"}>
-          <i className="fas fa-repeat-alt" />
+          <i className="fas fa-repeat-alt" onClick={()=>{
+            setGameCount(a => a+1)
+          }}/>
         </div>
         <div className={"lose"}>
-          <i className="fas fa-heart-broken" />
+          <i className="fas fa-heart-broken" onClick={()=>{
+            for(let i in board){
+              if(board[i] === 0){
+                board[i] = solutionArray[i]
+              }
+            }
+            setBoard([...board])
+          }}/>
         </div>
       </div>
       <div className={"numpad "}>
