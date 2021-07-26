@@ -1,7 +1,7 @@
 "use strict";
 import React from "react";
 
-import { setSelectedCell, getSelectedCell } from "./context/SelectedCell";
+import { setSelectedCell, getSelectedCell, setCellSelection } from "./context/SelectedCell";
 import { setBoardState } from "./context/BoardState";
 
 const bindToKeyboardInput = () => {
@@ -27,7 +27,7 @@ const bindToKeyboardInput = () => {
 
 bindToKeyboardInput();
 
-function createClass(index, prevClass) {
+function createClass(index, selection, prevClass) {
   if (index % 9 === 2 || index % 9 === 5) {
     prevClass += " border-right";
   }
@@ -46,20 +46,33 @@ function createClass(index, prevClass) {
   if (index >= 54 && index <= 62) {
     prevClass += " border-top";
   }
-  return prevClass;
+  if(selection < 0)
+    return prevClass;
+  if((index % 9 === selection % 9) && ( Math.floor(index / 9)  === Math.floor(selection / 9) % 9) ){
+    return prevClass + ' selected'
+  }
+  if((index % 9 === selection % 9) || ( Math.floor(index / 9)  === Math.floor(selection / 9) % 9) ){
+    return prevClass + ' highlighted'
+  }
+  return prevClass
 }
 
-function Cell({ number, index, editable, status }) {
+function Cell({ number, index, editable, status, selection }) {
   const onClickCell = (event) => {
     event.target.index = index;
-    if (editable) setSelectedCell(event.target);
-    else setSelectedCell(null);
-  };
-
+    if (editable) {
+      setSelectedCell(event.target)
+      setCellSelection(index)
+    }
+    else {
+      setSelectedCell(null)
+      setCellSelection(-1)
+    }
+  }
   return (
     <div
       className={createClass(
-        index,
+        index, selection,
         !editable || number === 0
           ? "cell"
           : status
