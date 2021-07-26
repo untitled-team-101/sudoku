@@ -1,242 +1,228 @@
-* {
-  transition: 2s ease;
-}
-
 .boardContainer {
-  perspective: 100vmin;
-
-  .suggestion {
-    .cell.correct {
-      background-color: #a3be8c !important;
+    perspective: 100vmin;
+    .suggestion {
+        .cell.correct {
+            background-color: #a3be8c !important;
+        }
+        .cell.incorrect {
+            background-color: #d08770 !important;
+        }
     }
-
-    .cell.incorrect {
-      background-color: #d08770 !important;
+    .board {
+        height: 50vmin;
+        width: 50vmin;
+        //opacity: 1;
+        margin: auto;
+        transform-style: preserve-3d;
+        transform: rotateX(0deg) rotateZ(0deg);
+        position: relative;
+        .page {
+            //display: none;
+            width: 50vmin;
+            height: 50vmin;
+            transform-style: preserve-3d;
+            position: absolute;
+            padding: 2vmin;
+            display: grid;
+            background: #eceff4;
+            grid-gap: -0.1vmin;
+            grid-template: repeat(9, 1fr) / repeat(9, 1fr);
+            .cell {
+                background: #eceff4;
+                display: grid;
+                place-content: center;
+            }
+            .border-top {
+                border-top: 0.2vmin solid;
+            }
+            .border-left {
+                border-left: 0.2vmin solid;
+            }
+            .border-bottom {
+                border-bottom: 0.2vmin solid;
+            }
+            .border-right {
+                border-right: 0.2vmin solid;
+            }
+        }
+        .solved {
+            background-color: #a3be8c;
+            .cell {
+                background-color: #a3be8c;
+            }
+        }
+        .top.solved .cell {
+            border: 0.2vmin solid #d0582e;
+        }
+        .bottom.solved .cell {
+            border: 0.2vmin solid #516624;
+        }
+        .left.solved .cell {
+            border: 0.2vmin solid #d0582e;
+        }
+        .right.solved .cell {
+            border: 0.2vmin solid #d0582e;
+        }
+        .top {
+            transform: translateY(-25vmin) rotateX(90deg);
+            .cell {
+                //
+                border: 0.1vmin solid #d08770;
+            }
+        }
+        .bottom {
+            transform: translateY(25vmin) rotateX(-90deg);
+            .cell {
+                border: 0.1vmin solid #a3be8c;
+            }
+        }
+        .left {
+            transform: translateX(-25vmin) rotateY(-90deg);
+            .cell {
+                border: 0.1vmin solid #d08770;
+            }
+        }
+        .right {
+            transform: translateX(25vmin) rotateY(90deg);
+            .cell {
+                border: 0.1vmin solid #ebcb8b;
+            }
+        }
+        .front {
+            transform: translateZ(25.3vmin);
+            width: 50.2vmin;
+            height: 50.2vmin;
+            background: #ffffff;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+        }
+        .back {
+            transform: translateZ(-25vmin) rotateX(180deg);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
     }
-  }
-
-  .board {
-    height: 50vmin;
-    width: 50vmin;
-    //opacity: 1;
-    margin: auto;
-    transform-style: preserve-3d;
-    transform: rotateX(0deg) rotateZ(0deg);
-    position: relative;
-
-    .page {
-      //display: none;
-      width: 50vmin;
-      height: 50vmin;
-      transform-style: preserve-3d;
-      position: absolute;
-      padding: 2vmin;
-      display: grid;
-      background: #eceff4;
-      grid-gap: -0.1vmin;
-      grid-template: repeat(9, 1fr) / repeat(9, 1fr);
-
-      .cell {
-        background: #eceff4;
-        display: grid;
-        place-content: center;
-      }
-
-      .border-top {
-        border-top: 0.2vmin solid;
-      }
-
-      .border-left {
-        border-left: 0.2vmin solid;
-      }
-
-      .border-bottom {
-        border-bottom: 0.2vmin solid;
-      }
-
-      .border-right {
-        border-right: 0.2vmin solid;
-      }
-    }
-
-    .solved {
-      background-color: #a3be8c;
-
-      .cell {
-        background-color: #a3be8c;
-      }
-    }
-
-    .top.solved .cell {
-      border: 0.2vmin solid #d0582e;
-    }
-
-    .bottom.solved .cell {
-      border: 0.2vmin solid #516624;
-    }
-
-    .left.solved .cell {
-      border: 0.2vmin solid #d0582e;
-    }
-
-    .right.solved .cell {
-      border: 0.2vmin solid #d0582e;
-    }
-
-    .top {
-      transform: translateY(-25vmin) rotateX(90deg);
-
-      .cell {
-        //
-        border: 0.1vmin solid #d08770;
-      }
-    }
-
-    .bottom {
-      transform: translateY(25vmin) rotateX(-90deg);
-
-      .cell {
-        border: 0.1vmin solid #a3be8c;
-      }
-    }
-
-    .left {
-      transform: translateX(-25vmin) rotateY(-90deg);
-
-      .cell {
-        border: 0.1vmin solid #d08770;
-      }
-    }
-
-    .right {
-      transform: translateX(25vmin) rotateY(90deg);
-
-      .cell {
-        border: 0.1vmin solid #ebcb8b;
-      }
-    }
-
-    .front {
-      transform: translateZ(25.3vmin);
-      width: 50.2vmin;
-      height: 50.2vmin;
-      background: #ffffff;
-      display: flex;
-      justify-content: center;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .back {
-      transform: translateZ(-25vmin) rotateX(180deg);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-  }
 }
 
 .xeasy {
-  perspective: 50vmin;
-
-  .board {
-    transform: rotateX(90deg) rotateY(0deg) rotateZ(0deg);
-
-    .front {
-      transform: translateZ(25vmin);
-      width: 50vmin;
-      height: 50vmin;
+    perspective: 50vmin;
+    .board {
+        transform: rotateX(90deg) rotateY(0deg) rotateZ(0deg);
+        .front {
+            transform: translateZ(25vmin);
+            width: 50vmin;
+            height: 50vmin;
+        }
     }
-  }
 }
 
 .easy {
-  perspective: 50vmin;
-
-  .board {
-    transform: rotateX(0deg) rotateY(-90deg) rotateZ(0deg);
-
-    .front {
-      transform: translateZ(25vmin);
-      width: 50vmin;
-      height: 50vmin;
+    perspective: 50vmin;
+    .board {
+        transform: rotateX(0deg) rotateY(-90deg) rotateZ(0deg);
+        .front {
+            transform: translateZ(25vmin);
+            width: 50vmin;
+            height: 50vmin;
+        }
     }
-  }
 }
 
 .medium {
-  perspective: 50vmin;
-
-  .board {
-    transform: rotateX(0deg) rotateY(90deg) rotateZ(0deg);
-
-    .front {
-      transform: translateZ(25vmin);
-      width: 50vmin;
-      height: 50vmin;
+    perspective: 50vmin;
+    .board {
+        transform: rotateX(0deg) rotateY(90deg) rotateZ(0deg);
+        .front {
+            transform: translateZ(25vmin);
+            width: 50vmin;
+            height: 50vmin;
+        }
     }
-  }
 }
 
 .hard {
-  perspective: 50vmin;
-
-  .board {
-    transform: rotateX(-90deg) rotateY(0deg) rotateZ(0deg);
-
-    .front {
-      transform: translateZ(25vmin);
-      width: 50vmin;
-      height: 50vmin;
+    perspective: 50vmin;
+    .board {
+        transform: rotateX(-90deg) rotateY(0deg) rotateZ(0deg);
+        .front {
+            transform: translateZ(25vmin);
+            width: 50vmin;
+            height: 50vmin;
+        }
     }
-  }
 }
 
 .done {
-  perspective: 100vmin;
-
-  .board {
-    transform: rotateX(-180deg) rotateY(0deg) rotateZ(0deg);
-    animation: frame1 15s forwards 3s;
-
-    .front {
-      width: 50vmin;
-      height: 50vmin;
-      animation: fade 5s forwards 5s;
+    perspective: 100vmin;
+    .board {
+        transform: rotateX(-180deg) rotateY(0deg) rotateZ(0deg);
+        animation: frame1 15s forwards 3s;
+        .front {
+            width: 50vmin;
+            height: 50vmin;
+            animation: fade 5s forwards 5s;
+        }
+        .back {
+            animation: fade 5s forwards 5s;
+        }
+        .top {
+            animation: fade 5s forwards 5s;
+        }
+        .bottom {
+            animation: fade 5s forwards 5s;
+        }
+        .left {
+            animation: fade 5s forwards 5s;
+        }
+        .right {
+            animation: fade 5s forwards 5s;
+        }
     }
-    .back {
-      animation: fade 5s forwards 5s;
-    }
-    .top {
-      animation: fade 5s forwards 5s;
-    }
-    .bottom {
-      animation: fade 5s forwards 5s;
-    }
-    .left {
-      animation: fade 5s forwards 5s;
-    }
-    .right {
-      animation: fade 5s forwards 5s;
-    }
-  }
 }
+
 @keyframes frame1 {
-  0% {
-    transform: rotateX(-180deg) rotateY(0deg) rotateZ(0deg);
-  }
-  10% {
-    transform: rotateX(-90deg) rotateY(0deg) rotateZ(0deg);
-  }
-  100% {
-    transform: rotateX(-90deg) rotateY(0deg) rotateZ(36000deg);
-  }
+    0% {
+        transform: rotateX(-180deg) rotateY(0deg) rotateZ(0deg);
+    }
+    10% {
+        transform: rotateX(-90deg) rotateY(0deg) rotateZ(0deg);
+    }
+    100% {
+        transform: rotateX(-90deg) rotateY(0deg) rotateZ(36000deg);
+    }
 }
+
 @keyframes fade {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.tooltip {
+    position: relative;
+}
+
+.tooltiptext {
+    position: absolute;
+    visibility: hidden;
+    background-color: lightblue;
+    color: black;
+    text-align: center;
+    border-radius: 6px;
+    padding: 1vh;
+    top: 0;
+    /* Position the tooltip */
+    font-size: 2vh;
+    z-index: 1;
+    transform: translate(50%, 380%);
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: unset;
 }

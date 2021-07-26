@@ -30,7 +30,7 @@ const Game = ({ sudokuArrays, difficulty, setDifficulty }) => {
         sudokuArray={sudokuArray}
         editable={editable}
         solutionArray={solutionArray}
-        difficulty={difficulty-1}
+        difficulty={difficulty}
         setDifficulty={setDifficulty}
       />
     </motion.div>

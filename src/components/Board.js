@@ -16,9 +16,10 @@ const Board = ({
 }) => {
   const [board, setBoard] = useState(sudokuArray);
   if (JSON.stringify(board) === JSON.stringify(solutionArray)) {
-    setDifficulty(difficulty+1);
+    setDifficulty(difficulty + 1);
   }
-  const [selection, setSelection] = useState([-1, -1])
+  const [count, setCount] = useState(0);
+  const [selection, setSelection] = useState([-1, -1]);
   setBoardStateFunction(setBoard);
   setCellSelectionFunction(setSelection);
   let cells = [];
@@ -35,41 +36,60 @@ const Board = ({
       />
     );
   }
+
+  let arr = [];
+  arr.push(<span className="tooltiptext">Hello</span>);
+  arr.push(<span className="tooltiptext">Neeche to Dekho!!!</span>);
+  arr.push(<span className="tooltiptext">Abe Chutiye!!</span>);
+  arr.push(<span className="tooltiptext">Scroll kar!!!</span>);
+
+  const unsetStyling = {
+    visibility: "unset",
+  };
   const difficultyArray = ["", "xeasy", "easy", "medium", "hard", "done"];
   return (
-    <div onWheel = {() => {
-      console.log("CHLRA");
-      setDifficulty(1);
-    }}> 
-
-      <div id={"boardContainer"} className={`boardContainer ${difficultyArray[difficulty]}`}>
-        <div className={"board suggestion"}>
-          <div className="page top" id={"hard"}>
-            {cells}
+      <div
+        onWheel={() => {
+          setDifficulty(1);
+          console.log("SCROLL", difficulty);
+        }}
+      >
+        <div
+          id={"boardContainer"}
+          className={`boardContainer ${difficultyArray[difficulty]}`}
+        >
+          <div className={"board suggestion"}>
+            <div className="page top" id={"hard"}>
+              {cells}
+            </div>
+            <div className="page bottom" id={"xeasy"}>
+              {cells}
+            </div>
+            <div className="page left" id={"medium"}>
+              {cells}
+            </div>
+            <div className="page right" id={"easy"}>
+              {cells}
+            </div>
+            <div
+              onClick={() => {
+                setCount(count + 1);
+              }}
+              className="page front tooltip"
+              style={{
+                backgroundImage: `url(${frontImg})`,
+                backgroundPosition: "center",
+                backgroundSize: "cover",
+                backgroundRepeat: "no-repeat",
+              }}
+            >
+              {arr[count]}
+            </div>
+            <div className="page back">Final Page</div>
           </div>
-          <div className="page bottom" id={"xeasy"}>
-            {cells}
-          </div>
-          <div className="page left" id={"medium"}>
-            {cells}
-          </div>
-          <div className="page right" id={"easy"}>
-            {cells}
-          </div>
-          <div
-            className="page front"
-            style={{
-              backgroundImage: `url(${frontImg})`,
-              backgroundPosition: "center",
-              backgroundSize: "cover",
-              backgroundRepeat: "no-repeat",
-            }}
-          />
-          <div className="page back">Final Page</div>
         </div>
+        <div className={"controls"}></div>
       </div>
-      <div className={"controls"}></div>
-    </div>
   );
 };
 
