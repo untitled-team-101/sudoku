@@ -25,7 +25,7 @@ const Board = ({
   // console.log(solutionArray)
   // console.log(sudokuArray)
   // console.log(editable)
-  console.log("reset board", sudokuArray);
+  // console.log("reset board", sudokuArray);
   const [board, setBoard] = useState(sudokuArray);
   useEffect(() => {
     setBoard(sudokuArray);
@@ -38,11 +38,6 @@ const Board = ({
   setBoardStateFunction(setBoard);
   setCellSelectionFunction(setSelection);
   let cells = [];
-  console.log(
-    solutionArray.map((a, i) => {
-      return a + "/" + board[i] + "/" + sudokuArray[i];
-    })
-  );
   for (let i = 0; i < board.length; i++) {
     cells.push(
       <Cell
