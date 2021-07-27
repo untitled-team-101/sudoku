@@ -47,18 +47,23 @@
 
 .overlay {
     position: absolute;
+    top: 0;
+    left: 0;
     width: 100vw;
     height: 100vh;
     opacity: 1;
+    z-index:-1;
     background: white;
-    animation: fade 3s ease forwards;
+    animation: fade 3s ease;
 }
 
 @keyframes fade {
     0% {
         opacity: 1;
+        z-index: 2;
     }
     100% {
         opacity: 0;
+        z-index: 2;
     }
 }

@@ -40,9 +40,6 @@ const Board = ({
         setTimeout(() => {
           alert("CONGRATULATIONS !!!\nScroll Down for Next Level !!");
         }, 100);
-      else if (difficulty === 5) {
-        alert("CONGRATULATIONS !!!\nYOU WON THE GAME !!!");
-      }
     gameCompleted = newCompleted;
   }
   const [count, setCount] = useState(0);

@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100&display=swap');
 
 .boardContainer {
+    perspective: 100vmin;
         transition: 2s ease;
         .suggestion {
             .cell.correct {
@@ -184,6 +185,7 @@
     
     .done {
         perspective: 100vmin;
+        transition: 2s ease;
         .animate {
             animation: frame1 15s cubic-bezier(0.26, 0.08, 0.63, 0.53) forwards;
             .front {
