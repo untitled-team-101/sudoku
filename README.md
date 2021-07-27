@@ -20,6 +20,8 @@
 
 ## Demo
 
+![Demo GIF](https://github.com/untitled-team-101/sudoku/blob/main/assets/demo.gif)
+
 [Demo Video](https://drive.google.com/drive/folders/1MSlJORXndlTIY27cnbMz6qbm2l5897JU?usp=sharing)
 
 ## Contributors
