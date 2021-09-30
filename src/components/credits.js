@@ -16,6 +16,9 @@ function Credits(props) {
         <div className={"memberlist"}>
           <ul>
             <li>
+              <a href={"https://github.com/grawish"}>Grawish Sachdeva</a>
+            </li>
+            <li>
               <a href={"https://github.com/Ayan-Dhara"}>Ayan Dhara</a>
             </li>
             <li>
@@ -32,9 +35,6 @@ function Credits(props) {
             </li>
             <li>
               <a href={"https://github.com/anjaligoswami"}>Anjali Goswami</a>
-            </li>
-            <li>
-              <a href={"https://github.com/grawish"}>Grawish Sachdeva</a>
             </li>
           </ul>
         </div>
