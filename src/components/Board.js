@@ -4,6 +4,7 @@ import backImg from "./img/back.gif";
 
 import Cell from "./Cell";
 import { useEffect, useState } from "react";
+import Modal from "./common/Modal"
 
 import { setCellSelectionFunction } from "./context/SelectedCell";
 import { setBoardStateFunction } from "./context/BoardState";
@@ -30,8 +31,14 @@ const Board = ({
   // console.log(editable)
   // console.log("reset board", sudokuArray);
   const [board, setBoard] = useState(sudokuArray);
+  const [modal, setModal] = useState(false);
+  const toggleModal = () => {
+    setModal(!modal);
+  }
+
   useEffect(() => {
-    setBoard(sudokuArray);
+    toggleModal();
+    // setBoard(sudokuArray);
   });
   if (board.length > 10) {
     let newCompleted = JSON.stringify(board) === JSON.stringify(solutionArray);
@@ -85,6 +92,7 @@ const Board = ({
           setDifficulty(1 + difficulty);
       }}
     >
+      {modal ? (<Modal toggleModal={toggleModal} isModalOpen={modal} />) : (null)}
       <div
         id={"boardContainer"}
         className={`boardContainer ${difficultyArray[difficulty]}`}
