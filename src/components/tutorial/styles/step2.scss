@@ -1,11 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100&display=swap");
 
-.step2{
-  background: rgb(255,255,255);
-  background: radial-gradient(circle, rgba(255,255,255,1) 30%, rgba(229,233,240,1) 100%);
-  font-family: 'Roboto Mono', monospace;
-  height: 100%;
-  .step2Title{
+.step2 {
+  background: rgb(255, 255, 255);
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 1) 30%,
+    rgba(229, 233, 240, 1) 100%
+  );
+  font-family: "Roboto Mono", monospace;
+  max-height: 100vh;
+  overflow-y: hidden;
+  .step2Title {
     display: flex;
     font-size: 2vmin;
     justify-content: center;
@@ -13,92 +18,92 @@
     padding: 1.5vmin;
   }
 
-  .step2Containers{
+  .step2Containers {
     display: flex;
     font-size: 2.5vmin;
     flex-flow: column;
-    .step2Container1{
+    .step2Container1 {
       width: 100%;
       display: flex;
       align-items: center;
       justify-content: space-between;
       padding: 2vmin;
       border-bottom: 0.2vmin black solid;
-      .step2Image1{
+      .step2Image1 {
         display: flex;
         align-items: center;
         justify-content: center;
         width: 40%;
-        .image{
+        .image {
           height: 38vmin;
         }
       }
-      .step2Para1{
+      .step2Para1 {
         display: flex;
         align-items: center;
         justify-content: center;
         width: 100%;
-        .para{
+        .para {
           width: 50vw;
         }
-        .para #info{
+        .para #info {
           color: green;
           font-weight: 600;
         }
-        .para #danger{
+        .para #danger {
           color: red;
           font-weight: 600;
         }
-        .para #special{
+        .para #special {
           color: blue;
           font-weight: 600;
         }
       }
     }
-    .step2Container2{
+    .step2Container2 {
       width: 100%;
       display: flex;
       align-items: center;
       justify-content: space-between;
       padding: 2vmin;
-      .step2Image2{
+      .step2Image2 {
         display: flex;
         align-items: center;
         justify-content: center;
         width: 40%;
-        .image{
+        .image {
           width: 38vmin;
         }
       }
-      .step2Para2{
+      .step2Para2 {
         display: flex;
         align-items: center;
         justify-content: center;
         width: 100%;
-        .para{
+        .para {
           width: 50vw;
         }
-        .para #info{
+        .para #info {
           color: green;
           font-weight: 600;
         }
-        .para #danger{
+        .para #danger {
           color: red;
           font-weight: 600;
         }
-        .para #special{
+        .para #special {
           color: blue;
           font-weight: 600;
         }
       }
     }
   }
-  .step2Btns{
+  .step2Btns {
     display: flex;
     flex-flow: row;
     align-items: center;
     justify-content: flex-end;
-    .step2PlayBtn{
+    .step2PlayBtn {
       border-radius: 1vmin;
       cursor: pointer;
       font-size: 3vmin;
@@ -106,8 +111,6 @@
       padding: 1.5vmin;
       box-shadow: lightblue 0 0 0.4vmin 0.2vmin;
       margin: 0 1vmin 0 1vmin;
-
     }
   }
-
 }
