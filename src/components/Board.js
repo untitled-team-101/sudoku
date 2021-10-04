@@ -35,17 +35,16 @@ const Board = ({
   const toggleModal = () => {
     setModal(!modal);
   }
-
   useEffect(() => {
-    toggleModal();
-    // setBoard(sudokuArray);
+    setBoard(sudokuArray);
   });
   if (board.length > 10) {
     let newCompleted = JSON.stringify(board) === JSON.stringify(solutionArray);
     if (newCompleted && !gameCompleted)
       if (difficulty > 0 && difficulty < 3)
         setTimeout(() => {
-          alert("CONGRATULATIONS !!!\nScroll Down for Next Level !!");
+          toggleModal();
+          // alert("CONGRATULATIONS !!!\nScroll Down for Next Level !!");
         }, 100);
     gameCompleted = newCompleted;
   }
@@ -93,6 +92,7 @@ const Board = ({
       }}
     >
       {modal ? (<Modal toggleModal={toggleModal} isModalOpen={modal} />) : (null)}
+
       <div
         id={"boardContainer"}
         className={`boardContainer ${difficultyArray[difficulty]}`}
