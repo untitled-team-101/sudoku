@@ -14,6 +14,7 @@ import {
 } from "./context/SelectedCell";
 
 import { setBoardState } from "./context/BoardState";
+import Modal from "./Modal"
 
 let gameCompleted = false;
 
@@ -30,6 +31,10 @@ const Board = ({
   // console.log(editable)
   // console.log("reset board", sudokuArray);
   const [board, setBoard] = useState(sudokuArray);
+  const [modal, setModal] = useState(false);
+  const toggleModal = () => {
+    setModal(!modal);
+  }
   useEffect(() => {
     setBoard(sudokuArray);
   });
@@ -38,7 +43,7 @@ const Board = ({
     if (newCompleted && !gameCompleted)
       if (difficulty > 0 && difficulty < 3)
         setTimeout(() => {
-          alert("CONGRATULATIONS !!!\nScroll Down for Next Level !!");
+          toggleModal();
         }, 100);
     gameCompleted = newCompleted;
   }
@@ -85,6 +90,7 @@ const Board = ({
           setDifficulty(1 + difficulty);
       }}
     >
+      {modal ? (<Modal toggleModal={toggleModal} heading={'Congratulations!'} description={'Scroll Down for Next Level !!'} isModalOpen={modal} />) : (null)}
       <div
         id={"boardContainer"}
         className={`boardContainer ${difficultyArray[difficulty]}`}
