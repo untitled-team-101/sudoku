@@ -56,6 +56,9 @@
                     display: grid;
                     place-content: center;
                 }
+                .editable {
+                    background-color: #ffffff;
+                }
                 .border-top {
                     border-top: 0.2vmin solid var(--wide-border-color) !important;
                 }
@@ -130,7 +133,7 @@
             }
         }
     }
-    
+
     .xeasy {
         perspective: 50vmin;
         .board {
@@ -142,7 +145,7 @@
             }
         }
     }
-    
+
     .easy {
         perspective: 50vmin;
         .board {
@@ -154,7 +157,7 @@
             }
         }
     }
-    
+
     .medium {
         perspective: 50vmin;
         .board {
@@ -166,7 +169,7 @@
             }
         }
     }
-    
+
     .hard {
         perspective: 50vmin;
         .board {
@@ -178,11 +181,11 @@
             }
         }
     }
-    
+
     .hidden {
         display: none !important;
     }
-    
+
     .done {
         perspective: 100vmin;
         transition: 2s ease;
@@ -215,7 +218,7 @@
             }
         }
     }
-    
+
     @keyframes frame1 {
         0% {
             transform: rotateX(-180deg) rotateY(0deg) rotateZ(0deg);
@@ -227,7 +230,7 @@
             transform: rotateX(-90deg) rotateY(0deg) rotateZ(36000deg);
         }
     }
-    
+
     @keyframes fade {
         0% {
             opacity: 1;
@@ -236,7 +239,7 @@
             opacity: 0;
         }
     }
-    
+
     .controls {
         transition: 1s ease;
         height: 50vmin;
@@ -324,7 +327,7 @@
             }
         }
     }
-    
+
     .numpad {
         background: #81A1C1;
         position: absolute;
@@ -341,12 +344,12 @@
             font-size: 2em;
         }
     }
-    
+
     .tooltip {
         font-family: 'Roboto Mono', monospace;
         position: relative;
     }
-    
+
     .tooltiptext {
         position: absolute;
         visibility: hidden;
@@ -361,7 +364,7 @@
         z-index: 1;
         transform: translate(90%,300%);
     }
-    
+
     .tooltip:hover .tooltiptext {
         visibility: unset;
     }
