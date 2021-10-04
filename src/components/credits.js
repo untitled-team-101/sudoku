@@ -7,7 +7,7 @@ function Credits(props) {
     <>
       <div className={"credits"}>
         <div className={"heading"}>
-          Made With <img src={ReactLove} />
+          Made With <img alt="ReactLove" src={ReactLove} />
         </div>
         <div className={"sub-heading"}>
           By &nbsp;

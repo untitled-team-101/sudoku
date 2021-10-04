@@ -52,7 +52,7 @@ const Step1 = () => {
                                 <img
                                     className={"image"}
                                     src={step1Img1}
-                                    alt={"Failed to load image"}
+                                    alt={"Failed to load"}
                                 />
                             </div>
                         </div>
@@ -62,7 +62,7 @@ const Step1 = () => {
                                 <img
                                     className={"image"}
                                     src={step1Img2}
-                                    alt={"Failed to load image"}
+                                    alt={"Failed to load"}
                                 />
                             </div>
 

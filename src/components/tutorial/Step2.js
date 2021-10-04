@@ -59,7 +59,7 @@ const Step2 = () => {
 
                             </div>
                             <div className={'step2Image1'}>
-                                <img className={'image'} src={step2Img2} alt={'Failed to load image'}/>
+                                <img className={'image'} src={step2Img2} alt={'Failed to load'}/>
                             </div>
 
                         </div>
@@ -67,7 +67,7 @@ const Step2 = () => {
                         <div className={'step2Container2'}>
 
                             <div className={'step2Image2'}>
-                                <img className={'image'} src={step1Img1} alt={'Failed to load image'}/>
+                                <img className={'image'} src={step1Img1} alt={'Failed to load'}/>
                             </div>
 
                             <div className={'step2Para2'}>
