@@ -203,6 +203,19 @@ const Board = ({
                 </div>
               );
             })}
+            <div
+              key="c"
+              className={"num"}
+              id="num-c"
+              onClick={() => {
+                setBoardState((prevState) => {
+                  prevState[getSelectedCell()?.index] = 0;
+                  return [...prevState];
+                });
+              }}
+            >
+              C
+            </div>
           </div>
         </>
       ) : (
