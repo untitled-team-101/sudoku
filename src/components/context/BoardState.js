@@ -1,4 +1,3 @@
-"use strict"
 let boardStateFunction = ()=>{}
 export const setBoardStateFunction = (func) => {
   boardStateFunction = func
