@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/img-redundant-alt */
 import step1Img1 from "../../imgs/step1.png";
 import step2Img2 from "../../imgs/step3.jpg";
 import {Link} from "react-router-dom";
