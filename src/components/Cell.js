@@ -1,4 +1,3 @@
-"use strict";
 import React from "react";
 
 import { setSelectedCell, getSelectedCell, setCellSelection } from "./context/SelectedCell";

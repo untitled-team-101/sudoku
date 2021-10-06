@@ -7,11 +7,7 @@ import { useEffect, useState } from "react";
 
 import { setCellSelectionFunction } from "./context/SelectedCell";
 import { setBoardStateFunction } from "./context/BoardState";
-import {
-  setSelectedCell,
-  getSelectedCell,
-  setCellSelection,
-} from "./context/SelectedCell";
+import { getSelectedCell } from "./context/SelectedCell";
 
 import { setBoardState } from "./context/BoardState";
 
@@ -32,7 +28,7 @@ const Board = ({
   const [board, setBoard] = useState(sudokuArray);
   useEffect(() => {
     setBoard(sudokuArray);
-  });
+  }, [sudokuArray]);
   if (board.length > 10) {
     let newCompleted = JSON.stringify(board) === JSON.stringify(solutionArray);
     if (newCompleted && !gameCompleted)
@@ -72,10 +68,6 @@ const Board = ({
   arr.push(<span className="tooltiptext">Don't know how to proceed??</span>);
   arr.push(<span className="tooltiptext">Well, Try some more!!!</span>);
   arr.push(<span className="tooltiptext">LOL!! Scroll to proceed!!</span>);
-
-  const unsetStyling = {
-    visibility: "unset",
-  };
 
   const difficultyArray = ["", "xeasy", "easy", "medium", "hard", "done"];
   return (
