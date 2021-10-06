@@ -27,7 +27,10 @@ const bindToKeyboardInput = () => {
 
 bindToKeyboardInput();
 
-function createClass(index, selection, prevClass) {
+function createClass(index, selection, editable, prevClass) {
+  if (editable){
+    prevClass += " editable"
+  }
   if (index % 9 === 2 || index % 9 === 5) {
     prevClass += " border-right";
   }
@@ -73,7 +76,7 @@ function Cell({ number, index, editable, status, selection }) {
   return (
     <div
       className={createClass(
-        index, selection,
+        index, selection, editable,
         !editable || number === 0
           ? "cell"
           : status
