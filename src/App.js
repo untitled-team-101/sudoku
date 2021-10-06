@@ -3,9 +3,9 @@ import Game from "./components/Game";
 import Home from "./components/Home";
 import Credits from "./components/credits";
 import {sudokuArrays} from "./variables/sudokuArrays";
-import {useEffect, useState} from "react";
+import {useState} from "react";
 
-import {AnimatePresence, motion} from "framer-motion";
+import {AnimatePresence} from "framer-motion";
 
 import "./styles/App.scss";
 import Step1 from "./components/tutorial/Step1";

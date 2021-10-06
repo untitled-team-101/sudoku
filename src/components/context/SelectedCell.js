@@ -1,4 +1,3 @@
-"use strict"
 let selectedCell = null
 export const setSelectedCell = (cell) => {
   selectedCell = cell
