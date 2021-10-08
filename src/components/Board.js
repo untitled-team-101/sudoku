@@ -32,8 +32,11 @@ const Board = ({
   // console.log("reset board", sudokuArray);
   const [board, setBoard] = useState(sudokuArray);
   const [modal, setModal] = useState(false);
-  const toggleModal = () => {
-    setModal(!modal);
+  const closeModal = () => {
+    setModal(false);
+  }
+  const openModal = () => {
+    setModal(true);
   }
   useEffect(() => {
     setBoard(sudokuArray);
@@ -43,7 +46,7 @@ const Board = ({
     if (newCompleted && !gameCompleted)
       if (difficulty > 0 && difficulty < 3)
         setTimeout(() => {
-          toggleModal();
+          openModal();
           // alert("CONGRATULATIONS !!!\nScroll Down for Next Level !!");
         }, 100);
     gameCompleted = newCompleted;
@@ -91,7 +94,7 @@ const Board = ({
           setDifficulty(1 + difficulty);
       }}
     >
-      {modal ? (<Modal toggleModal={toggleModal} isModalOpen={modal} />) : (null)}
+      {modal ? (<Modal toggleModal={closeModal} isModalOpen={modal} />) : (null)}
 
       <div
         id={"boardContainer"}
